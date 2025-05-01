@@ -1,0 +1,33 @@
+{
+  "home":{
+    "hero": {
+      "img1": "/assets/images/hero-img1.webp",
+      "img2": "/assets/images/hero-img2.webp",
+      "img3": "/assets/images/hero-img3.webp"
+    }
+  },
+  "our-projects": [
+     {
+        "id": 1,
+        "title": "مشروع تنال 1",
+        "image": "https://placebear.com/200/300",
+        "description": "Project 1 description",
+        "link": "https://example.com/project1"
+     },
+     {
+       "id": 2,
+       "title": "مشروع تنال 2",
+       "image": "https://placebear.com/200/300",
+       "description": "Project 2 description",
+       "link": "https://example.com/project1"
+     },
+     {
+       "id": 3,
+       "title": "مشروع تنال 3",
+       "image": "https://placebear.com/200/300",
+       "description": "Project 3 description",
+       "link": "https://example.com/project1"
+     }
+  ]
+ 
+}
