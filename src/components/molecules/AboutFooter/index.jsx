@@ -3,8 +3,15 @@
 import Link from 'next/link';
 
 // Import MUI Components.
-import { Button, Grid, Stack, Typography, useTheme } from '@mui/material';
-
+import {
+  Box,
+  Button,
+  Grid,
+  Skeleton,
+  Stack,
+  Typography,
+  useTheme
+} from '@mui/material';
 
 // Import Components.
 import Logo from '@/components/atoms/Logo';
@@ -12,7 +19,7 @@ import Logo from '@/components/atoms/Logo';
 // Import Constants.
 import { FOOTER } from '@/constants/FOOTER';
 
-const AboutFooter = ({getData}) => {
+const AboutFooter = ({ getData, loading }) => {
   // Use Theme.
   const { colors } = useTheme();
 
@@ -22,33 +29,67 @@ const AboutFooter = ({getData}) => {
         container
         alignItems='center'
         spacing={2}>
-        <Logo
-          height={80}
-          variant='light'
-        />
+        {loading ? (
+          <Skeleton
+            sx={{ bgcolor: 'secondary', borderRadius: '10px 0 10px 0' }}
+            width={63}
+            height={140}
+          />
+        ) : (
+          <Logo
+            height={80}
+            variant='light'
+          />
+        )}
         <Typography
           variant='h6'
           fontSize='1.3rem'
           fontWeight='600'
           color={colors.quinary}>
-          {FOOTER.TITLE}
+          {loading ? (
+            <Skeleton
+              width={150}
+              variant='text'
+              sx={{ fontSize: '1.4rem' }}
+            />
+          ) : (
+            FOOTER.TITLE
+          )}
         </Typography>
       </Grid>
-      <Typography
-        variant='body2'
-        textAlign='right'
-        color={colors.quaternary}>
-        {getData.description}...
-        <span>
-          <Button
-            component={Link}
-            href='#'
+      {loading ? (
+        <Box>
+          <Skeleton
+            sx={{ width: '100%', fontSize: '1rem' }}
             variant='text'
-            color={colors.tertiary}>
-            {FOOTER.READ_MORE}
-          </Button>
-        </span>
-      </Typography>
+          />
+          <Skeleton
+            sx={{ width: '100%', fontSize: '1rem' }}
+            variant='text'
+          />
+          <Skeleton
+            sx={{ width: '40%', fontSize: '1rem' }}
+            variant='text'
+          />
+        </Box>
+      ) : (
+        <Typography
+          variant='body2'
+          textAlign='right'
+          color={colors.quaternary}>
+          {getData.description}...
+          <span>
+            {' '}
+            <Button
+              component={Link}
+              href='#'
+              variant='text'
+              color={colors.tertiary}>
+              {FOOTER.READ_MORE}
+            </Button>
+          </span>
+        </Typography>
+      )}
     </Stack>
   );
 };
