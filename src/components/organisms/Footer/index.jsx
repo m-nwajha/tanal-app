@@ -1,19 +1,26 @@
 'use client';
+// Import ReactsJS & NextJS.
+import { useEffect } from 'react';
+
 // Import MUI Components.
-import { Container, Grid, Skeleton, Stack } from '@mui/material';
+import { Container, Grid } from '@mui/material';
+
+// Import Hooks.
+import useAPI from '@/hooks/useAPI';
 
 // Import Components.
 import AboutFooter from '@/components/molecules/AboutFooter';
+import QuickLinks from '@/components/molecules/QuickLinks';
 import OurProjects from '@/components/molecules/OurProjects';
+import SocialMedia from '@/components/molecules/SocialMedia';
+import Copyright from '@/components/molecules/Copyright';
+
+// Import Constants.
+import { END_POINTS } from '@/constants/END_POINTS';
+import { FOOTER } from '@/constants/FOOTER';
 
 // Import Style.
 import { FooterStyled } from './style';
-import { useEffect } from 'react';
-import useAPI from '@/hooks/useAPI';
-import { END_POINTS } from '@/constants/END_POINTS';
-import QuickLinks from '@/components/molecules/QuickLinks';
-import { FOOTER } from '@/constants/FOOTER';
-import SocialMedia from '@/components/molecules/SocialMedia';
 
 const Footer = () => {
   // Use API.
@@ -33,6 +40,7 @@ const Footer = () => {
           spacing={4}
           justifyContent='center'
           alignItems='center'>
+          {/** About Footer Grid */}
           <Grid
             item
             size={{ xs: 12, md: 3 }}>
@@ -41,6 +49,8 @@ const Footer = () => {
               loading={loading}
             />
           </Grid>
+
+          {/** Quick Links Grid */}
           <Grid
             item
             alignSelf='start'
@@ -52,6 +62,8 @@ const Footer = () => {
               loading={loading}
             />
           </Grid>
+
+          {/** Our Project Grid */}
           <Grid
             item
             alignSelf='start'
@@ -61,6 +73,8 @@ const Footer = () => {
               iconOurProjects={FOOTER.PROJECTS.iconTitle}
             />
           </Grid>
+
+          {/** Social Media Grid */}
           <Grid
             item
             alignSelf='start'
@@ -73,6 +87,9 @@ const Footer = () => {
             />
           </Grid>
         </Grid>
+
+        {/** Copyright */}
+        <Copyright />
       </Container>
     </FooterStyled>
   );
