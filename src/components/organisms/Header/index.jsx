@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react';
 // Import MUI Components.
 import { Container, Grid } from '@mui/material';
 
+// Import Hooks.
+import useScroll from '@/hooks/useScroll';
+
 // Import Components.
 import Logo from '@/components/atoms/Logo';
 import Navbar from '@/components/molecules/Navbar';
@@ -14,19 +17,12 @@ import NavBtn from '@/components/atoms/NavBtn';
 import { HeaderStyled } from './style';
 
 const Header = () => {
-  // Scroll State.
-  const [heightScroll, setHeightScroll] = useState(0);
-
+  
   // Open | Close Menu On Mobile State.
   const [menu, setMenu] = useState(false);
-
-  // Use Effect.
-  useEffect(() => {
-    // Add Scroll Event Listener on Component Mounting
-    document.addEventListener('scroll', () => {
-      setHeightScroll(window.scrollY);
-    });
-  }, []);
+  
+  // Use Scroll
+  const { heightScroll } = useScroll();
 
   return (
     // Header Render.
