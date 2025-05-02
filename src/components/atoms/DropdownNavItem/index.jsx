@@ -10,17 +10,17 @@ import { StyledDropdownNavItem } from './style';
 const DropdownNavItem = ({ getDataItem, onClick }) => {
   return (
     <StyledDropdownNavItem onClick={onClick}>
-      <Button
-        key={getDataItem.id}
-        component={Link}
-        href={getDataItem.link}>
-        <Avatar
-          sx={{ ml: '1rem' }}
-          alt={getDataItem.title}
-          src={getDataItem.image}
-        />
-        {getDataItem.title}
-      </Button>
+        <Button
+          key={getDataItem.id}
+          component={Link}
+          href={getDataItem.href}>
+          <Avatar
+            sx={{ ml: '1rem' }}
+            alt={getDataItem.label}
+            src={getDataItem.image}
+          />
+          {getDataItem.label}
+        </Button>
     </StyledDropdownNavItem>
   );
 };
