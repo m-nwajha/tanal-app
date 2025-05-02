@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const useAPI = (url, config) => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const get = async () => {
     try {
