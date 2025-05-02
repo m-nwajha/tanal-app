@@ -18,6 +18,7 @@ import Logo from '@/components/atoms/Logo';
 
 // Import Constants.
 import { FOOTER } from '@/constants/FOOTER';
+import { PATHS } from '@/constants/PATHS';
 
 const AboutFooter = ({ getData, loading }) => {
   // Use Theme.
@@ -79,10 +80,9 @@ const AboutFooter = ({ getData, loading }) => {
           color={colors.quaternary}>
           {getData.description}...
           <span>
-            {' '}
             <Button
               component={Link}
-              href='#'
+              href={PATHS.ABOUT}
               variant='text'
               color={colors.tertiary}>
               {FOOTER.READ_MORE}

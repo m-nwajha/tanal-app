@@ -6,7 +6,9 @@ export const QuickLinksItemStyled = styled.li`
     const { quinary, tertiary } = theme.colors;
     return `
   & > a {
+    font-family: ${theme.fontFamily.IBM};
     color: ${quinary};
+    font-weight: 400;
     transition: 0.5s;
     padding-right: 0;
   }
