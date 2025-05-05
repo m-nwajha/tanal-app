@@ -49,7 +49,7 @@ const Hero = () => {
           </Grid>
           <Grid
             container
-            size={{ xs: 10, md: 6 }}
+            size={{ xs: 11, md: 6 }}
             justifyContent='center'>
             <HeroImages
               getData={data}

@@ -7,16 +7,16 @@ import D from '@/components/atoms/DescriptionSection';
 
 const HeroText = ({ getData, loading }) => {
   return (
-    <Stack
-      spacing={3}>
+    <Stack spacing={3}>
       {loading ? (
         <Skeleton
-          sx={{width: '100%', height: '5rem' }}
+          sx={{ width: '100%', height: '5rem' }}
           variant='text'
         />
       ) : (
         <H
-          variant='h1'
+          variant='h3'
+          component='h1'
           type='light'>
           {getData?.hero?.title}
         </H>
@@ -27,7 +27,7 @@ const HeroText = ({ getData, loading }) => {
           variant='text'
         />
       ) : (
-        <D type='light'>{getData?.hero?.description}</D>
+        <D variant='h5' type='light'>{getData?.hero?.description}</D>
       )}
     </Stack>
   );
