@@ -1,12 +1,13 @@
 // Import Style.
 import { HeadingSectionStyled } from './style';
 
-const HeadingSection = ({ variant, children, type }) => {
+const HeadingSection = ({ variant, children, type, component }) => {
   return (
     <HeadingSectionStyled
       align='center'
       color={type === 'light' ? 'primary' : ''}
-      variant={variant? variant : 'h2'}>
+      component={component}
+      variant={variant}>
       <span
         className={
           type === 'light' ? 'light_heading__section' : 'dark_heading__section'
