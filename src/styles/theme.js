@@ -6,7 +6,7 @@ export const THEME = {
     secondary: '#333761',
     tertiary: '#8490C8',
     quaternary: '#D5D9E3',
-    quinary: '#EEEDF6',
+    quinary: '#EEEDF6'
     // senary: '#E9C46A',
     // septenary: '#F4A261',
     // octonary: '#E76F51',
@@ -19,6 +19,12 @@ export const THEME = {
     default: '"Cairo", sans-serif',
     cairo: '"Cairo", sans-serif',
     IBM: '"IBM Plex Sans Arabic", sans-serif'
+  },
+  fontSizes: {
+    small: '1rem',
+    medium: '1.2rem',
+    large: '2rem',
+    xLarge: '3rem'
   },
   media: {
     mobile: '(max-width: 768px)',

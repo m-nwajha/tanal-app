@@ -1,33 +1,149 @@
 {
-  "home":{
+  "about-us": {
+    "hero": {},
+    "betweenLines": {
+      "title": "تنال بين السطور",
+      "description": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد",
+      "images": {
+        "img1": "/assets/images/about-img2.webp",
+        "img2": "/assets/images/about-img2.webp",
+        "img3": "/assets/images/about-img3.webp"
+      }
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "footer": {
+    "description": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص ",
+    "socialMedia": [
+      {
+        "id": 1,
+        "label": "facebook",
+        "useName": "m-nawjha"
+      },
+      {
+        "id": 2,
+        "label": "twitter-x",
+        "useName": "m-nawjha"
+      },
+      {
+        "id": 3,
+        "label": "instagram",
+        "useName": "m-nawjha"
+      },
+      {
+        "id": 4,
+        "label": "linkedin",
+        "useName": "m-nawjha"
+      }
+    ]
+  },
+  "home": {
     "hero": {
-      "img1": "/assets/images/hero-img1.webp",
-      "img2": "/assets/images/hero-img2.webp",
-      "img3": "/assets/images/hero-img3.webp"
+      "title": "شركة تنال",
+      "description": "الأولى للإستثمار",
+      "btns": {
+        "more": {
+          "label": "تعرف المزيد",
+          "href": "#"
+        }
+      },
+      "images": {
+        "img1": "/assets/images/hero-img1.webp",
+        "img2": "/assets/images/hero-img2.webp",
+        "img3": "/assets/images/hero-img3.webp"
+      }
+    },
+    "counters": [
+      {
+        "id": 1,
+        "title": "client",
+        "label": "عدد عملائنا",
+        "amount": 300
+      },
+      {
+        "id": 2,
+        "title": "employer",
+        "label": "عدد موظفينا",
+        "amount": 40
+      },
+      {
+        "id": 3,
+        "title": "project",
+        "label": "مشاريعنا",
+        "amount": 4
+      },
+      {
+        "id": 4,
+        "title": "happy",
+        "label": "الرضا والسعادة",
+        "amount": 1000
+      }
+    ],
+    "aboutUs": {
+      "description": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد",
+      "btn": {
+        "label": "قراءة المزيد",
+        "href": "#"
+      }
+    }
+  },
+  "about-us": {
+    "inLines": {
+      "description": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد",
+      "btn": {
+        "label": "قراءة المزيد",
+        "href": "#"
+      }
     }
   },
   "our-projects": [
-     {
-        "id": 1,
-        "title": "مشروع تنال 1",
-        "image": "https://placebear.com/200/300",
-        "description": "Project 1 description",
-        "link": "https://example.com/project1"
-     },
-     {
-       "id": 2,
-       "title": "مشروع تنال 2",
-       "image": "https://placebear.com/200/300",
-       "description": "Project 2 description",
-       "link": "https://example.com/project1"
-     },
-     {
-       "id": 3,
-       "title": "مشروع تنال 3",
-       "image": "https://placebear.com/200/300",
-       "description": "Project 3 description",
-       "link": "https://example.com/project1"
-     }
+    {
+      "id": 1,
+      "label": "مشروع تنال 1",
+      "image": "https://placebear.com/200/300",
+      "description": "Project 1 description",
+      "href": "https://example.com/project1"
+    },
+    {
+      "id": 2,
+      "label": "مشروع تنال 2",
+      "image": "https://placebear.com/200/300",
+      "description": "Project 2 description",
+      "href": "https://example.com/project1"
+    },
+    {
+      "id": 3,
+      "label": "مشروع تنال 3",
+      "image": "https://placebear.com/200/300",
+      "description": "Project 3 description",
+      "href": "https://example.com/project1"
+    },
+    {
+      "id": 4,
+      "label": "مشروع تنال 4",
+      "image": "https://placebear.com/200/300",
+      "description": "Project 3 description",
+      "href": "https://example.com/project1"
+    }
   ]
- 
 }
