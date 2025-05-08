@@ -1,3 +1,13 @@
+export const ABOUT_BREADCRUMB = {
+  title: 'عن تنال',
+  breadcrumbHistory: [
+    {
+      id: 1,
+      label: 'عن تنال',
+    }
+  ]
+};
+
 export const IN_LINE = {
   images: [
     {
