@@ -7,11 +7,7 @@ import { Typography } from '@mui/material';
 // Import style.
 import { TitleStyled } from './style';
 
-const TransparencyBGImagesSectionImgBox = ({
-  loading,
-  getDataAPI,
-  getDataConstant
-}) => {
+const TransparencyBGImagesSectionImgBox = ({ loading, images, title }) => {
   return (
     <TitleStyled>
       <div className='title_boxes'>
@@ -19,14 +15,14 @@ const TransparencyBGImagesSectionImgBox = ({
           variant='h5'
           component='h5'
           align='center'>
-          {getDataConstant?.title}
+          {title}
         </Typography>
         <div className='piece_big'>
           {!loading && (
             <Image
               fill
-              alt={getDataConstant?.title}
-              src={getDataAPI?.betweenLines?.images?.img1}
+              alt={title}
+              src={images?.img1}
             />
           )}
         </div>
@@ -34,8 +30,8 @@ const TransparencyBGImagesSectionImgBox = ({
           {!loading && (
             <Image
               fill
-              alt={getDataConstant?.title}
-              src={getDataAPI?.betweenLines?.images?.img2}
+              alt={title}
+              src={images?.img2}
             />
           )}
         </div>
