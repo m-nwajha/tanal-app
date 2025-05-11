@@ -1,14 +1,18 @@
+import ContactSupportRoundedIcon from '@mui/icons-material/ContactSupportRounded';
+import BusinessCenterRoundedIcon from '@mui/icons-material/BusinessCenterRounded';
+
 export const ABOUT_BREADCRUMB = {
   title: 'عن تنال',
   breadcrumbHistory: [
     {
       id: 1,
-      label: 'عن تنال',
+      label: 'عن تنال'
     }
   ]
 };
 
-export const IN_LINE = {
+export const BETWEEN_LINES = {
+  title: 'تنال بين السطور',
   images: [
     {
       id: 1,
@@ -42,5 +46,11 @@ export const IN_LINE = {
       height: 30,
       src: false
     }
-  ]
+  ],
+  whyTanal: {
+    listTitle: { title: 'لماذا تنال؟', icon: <ContactSupportRoundedIcon /> },
+    icon: {
+      test: <BusinessCenterRoundedIcon />
+    }
+  }
 };

@@ -1,13 +1,11 @@
 // Import App Layout.
 import AppLayout from '@/components/layouts/AppLayout';
+import { META_DATA } from '@/constants/META_DATA';
 
 // Import Global Styles.
 import '@/styles/globals.css';
 
-export const metadata = {
-  title: 'شركة تنال للاستثمار | Tanal',
-  description: 'شركة تنال الأول للاستثمار'
-};
+export const metadata = META_DATA;
 
 export default function RootLayout({ children }) {
   return (

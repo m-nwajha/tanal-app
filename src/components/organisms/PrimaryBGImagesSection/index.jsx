@@ -1,13 +1,10 @@
 'use client';
-// Import ReactJS.
-import { useEffect } from 'react';
 
 // Import MUI Components.
 import { Button, Container, Grid, Skeleton, Stack } from '@mui/material';
 
 // Import Hooks.
 import { useTheme } from '@emotion/react';
-import useAPI from '@/hooks/useAPI';
 
 // Import Components.
 import AboutTextSkeleton from '@/components/molecules/AboutTextSkeleton';
@@ -15,22 +12,15 @@ import AboutText from '@/components/molecules/AboutText';
 import AboutImages from '@/components/molecules/AboutImages';
 
 // Import Constants.
-import { END_POINTS } from '@/constants/END_POINTS';
 import { HOME } from '@/constants/HOME';
 
 // Import Style.
 import { WrapperAboutStyled } from './style';
 
-const betweenLines = () => {
-  // Use API.
-  const { data, loading, get } = useAPI(`${END_POINTS.ABOUT_US}?betweenLines`);
-
+const PrimaryBGImagesSection = ({ getDataAPI, getDataConstant, loading }) => {
   // Use Theme.
   const { colors } = useTheme();
 
-  useEffect(() => {
-    get();
-  }, []);
   return (
     <WrapperAboutStyled>
       <Container maxWidth='lg'>
@@ -46,7 +36,7 @@ const betweenLines = () => {
           <Grid
             item
             size={{ sm: 12, lg: 7 }}>
-            <Stack spacing={3}>
+            {/* <Stack spacing={3}>
               {loading ? (
                 <AboutTextSkeleton />
               ) : (
@@ -77,7 +67,7 @@ const betweenLines = () => {
                   </Button>
                 )}
               </div>
-            </Stack>
+            </Stack> */}
           </Grid>
         </Grid>
       </Container>
@@ -85,4 +75,4 @@ const betweenLines = () => {
   );
 };
 
-export default betweenLines;
+export default PrimaryBGImagesSection;
