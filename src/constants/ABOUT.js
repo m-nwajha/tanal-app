@@ -1,3 +1,7 @@
+// import Paths app.
+import { PATHS } from './PATHS';
+
+// Import icons from Material UI.
 import ContactSupportRoundedIcon from '@mui/icons-material/ContactSupportRounded';
 import BusinessCenterRoundedIcon from '@mui/icons-material/BusinessCenterRounded';
 
@@ -13,6 +17,10 @@ export const ABOUT_BREADCRUMB = {
 
 export const BETWEEN_LINES = {
   title: 'تنال بين السطور',
+  button: {
+    label: 'تعرف المزيد',
+    href: PATHS.ABOUT
+  },
   images: [
     {
       id: 1,
@@ -40,6 +48,14 @@ export const BETWEEN_LINES = {
     },
     {
       id: 4,
+      bottom: -60,
+      right: 230,
+      width: 210,
+      height: 210,
+      src: '/assets/images/about-img3.webp'
+    },
+    {
+      id: 5,
       bottom: -30,
       left: 100,
       width: 30,
