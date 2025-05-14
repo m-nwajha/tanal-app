@@ -1,12 +1,12 @@
 'use client';
 // Import Header.
-import Header from '../organisms/Header';
+import Header from '../shared/Header';
 
 // Import Footer.
-import Footer from '../organisms/Footer';
+import Footer from '../shared/Footer';
 
 // Import ToTop Btn.
-import ToTopBtn from '../atoms/ToTopBtn';
+import ToTopBtn from '../shared/ToTopBtn';
 
 const MainLayout = ({ children }) => {
   return (

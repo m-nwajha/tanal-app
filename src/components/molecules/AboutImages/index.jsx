@@ -1,5 +1,4 @@
 import AboutImgItem from '@/components/atoms/AboutImgItem';
-import React from 'react';
 
 const AboutImages = ({ loading  }) => {
   return (

@@ -17,6 +17,7 @@
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
     "axios": "^1.9.0",
+    "mongoose": "^8.14.2",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-cookie": "^8.0.1",
