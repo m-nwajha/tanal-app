@@ -18,15 +18,15 @@
     "@mui/material": "^7.0.2",
     "axios": "^1.9.0",
     "mongoose": "^8.14.2",
+    "@netlify/plugin-nextjs": "^5.11.1",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-cookie": "^8.0.1",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
+    "react-dom": "^19.0.0",
     "@eslint/eslintrc": "^3",
-    "@netlify/plugin-nextjs": "^5.11.1",
     "eslint": "^9",
     "eslint-config-next": "15.3.1"
+  },
+  "devDependencies": {
   }
 }
