@@ -7,13 +7,6 @@ export const THEME = {
     tertiary: '#8490C8',
     quaternary: '#D5D9E3',
     quinary: '#EEEDF6'
-    // senary: '#E9C46A',
-    // septenary: '#F4A261',
-    // octonary: '#E76F51',
-    // nonary: '#2A9D8F',
-    // decenary: '#E9C46A',
-    // undecenary: '#F4A261',
-    // duodecenary: '#E76F51'
   },
   fontFamily: {
     default: '"Cairo", sans-serif',

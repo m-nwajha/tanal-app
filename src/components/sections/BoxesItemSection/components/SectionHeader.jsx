@@ -5,7 +5,7 @@ import { Stack } from '@mui/material';
 import H from '@/components/ui/HeadingSection';
 import D from '@/components/ui/DescriptionSection';
 
-const SectionHeader = ({ title, description}) => {
+const SectionHeader = ({ title, description }) => {
   return (
     <Stack
       spacing={4}
@@ -23,6 +23,6 @@ const SectionHeader = ({ title, description}) => {
       </D>
     </Stack>
   );
-}
+};
 
-export default SectionHeader
+export default SectionHeader;

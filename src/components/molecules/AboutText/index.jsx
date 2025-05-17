@@ -5,7 +5,7 @@ import { Stack, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
 
 // Import Components.
-import H from '@/components/atoms/HeadingSection';
+import H from '@/components/ui/HeadingSection';
 
 const AboutText = ({ title, description }) => {
   const { colors, fontFamily } = useTheme();

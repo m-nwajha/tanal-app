@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import bg from '@images/bg-pattern2.svg';
 
 export const WrapperStyled = styled.div`
-  padding-block: 7rem 5rem;
+  padding-block: 7rem;
   position: relative;
 
   &:before {

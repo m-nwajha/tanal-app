@@ -1,5 +1,8 @@
+import PrimaryBGImagesSection from '@/components/organisms/PrimaryBGImagesSection';
 
 
-const About = () => <betweenLines />;
+const About = ({}) => {
+    return <PrimaryBGImagesSection loading={false}/>
+};
 
 export default About;

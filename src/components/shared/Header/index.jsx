@@ -1,53 +1,63 @@
 'use client';
-// Import React Hooks & Components.
+
 import { useState } from 'react';
-
-// Import MUI Components.
-import { Container, Grid } from '@mui/material';
-
-// Import Hooks.
+import { Box, Container, Grid, useTheme } from '@mui/material';
 import useScroll from '@/hooks/useScroll';
-
-// Import Components.
 import Logo from '@/components/ui/Logo';
 import Navbar from './components/Navbar';
 import NavBtn from './components/NavBtn';
 
-// Import Style.
-import { HeaderStyled } from './style';
-
 const Header = () => {
-  
-  // Open | Close Menu On Mobile State.
   const [menu, setMenu] = useState(false);
-  
-  // Use Scroll
   const { heightScroll } = useScroll();
+  const theme = useTheme();
+
+  const isFixed = heightScroll > 0;
 
   return (
-    // Header Render.
-    <HeaderStyled
-      headerFixed={heightScroll}
-      openMobileMenu={menu}>
-      {/** Container */}
+    <Box
+      component='header'
+      sx={{
+        'paddingBlock': isFixed ? '0.4rem' : '0.8rem',
+        'backgroundColor': isFixed ? '#ffffff3d' : 'transparent',
+        'boxShadow': isFixed
+          ? '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)'
+          : 'none',
+        'backdropFilter': isFixed && !menu ? 'blur(20px)' : 'none',
+        'WebkitBackdropFilter': isFixed && !menu ? 'blur(20px)' : 'none',
+        'position': 'fixed',
+        'top': 0,
+        'left': 0,
+        'right': 0,
+        'zIndex': 1000,
+        '&::after': {
+          content: heightScroll === 0 ? '""' : 'none',
+          backgroundColor: theme.palette.secondary.main,
+          width: { xs: '300px', sm: '500px' },
+          height: '300px',
+          borderRadius: '40px',
+          transform: 'rotate(-10deg)',
+          position: 'absolute',
+          top: '-170px',
+          left: '-140px',
+          zIndex: -1,
+        },
+      }}>
       <Container maxWidth='lg'>
-        {/** Row */}
         <Grid
           container
           spacing={2}
           justifyContent='space-between'
           alignItems='center'>
-          {/** Logo Grid */}
           <Grid
             item
             sx={{ order: 1 }}>
             <Logo
               variant='dark'
-              height={heightScroll > 0 ? 90 : 100}
+              height={isFixed ? 90 : 100}
             />
           </Grid>
 
-          {/** Navbar Grid */}
           <Grid
             item
             sx={{ order: { xs: 3, lg: 2 } }}>
@@ -58,18 +68,17 @@ const Header = () => {
             />
           </Grid>
 
-          {/** NavBtns Grid */}
           <Grid
             item
             sx={{
               order: { xs: 2, lg: 3 },
-              display: { xs: 'none', lg: 'flex' }
+              display: { xs: 'none', lg: 'flex' },
             }}>
             <NavBtn navFixed={heightScroll} />
           </Grid>
         </Grid>
       </Container>
-    </HeaderStyled>
+    </Box>
   );
 };
 

@@ -8,12 +8,12 @@ import connectMongodb from '@/config/mongodb';
 import Home from '@/models/home';
 
 // Import Utils.
-import { withApiKeyProtection } from '@/utils/apiKey';
+import { withApiKeyProtection } from '@/middlewares/apiKey';
 
 async function handler(req) {
-    await connectMongodb();
-    const homeData = await Home.findOne();
-    return NextResponse.json(homeData);
+  await connectMongodb();
+  const homeData = await Home.findOne();
+  return NextResponse.json(homeData);
 }
 
 export const GET = withApiKeyProtection(handler);

@@ -11,7 +11,7 @@ const MoreBtnHero = ({ moreBtn, loading }) => {
     />
   ) : (
     <Button
-      href={moreBtn?.hero?.btns?.more?.href}
+      href={moreBtn?.HERO?.btns?.more?.href}
       variant='contained'
       sx={{
         borderRadius: 2,
@@ -26,7 +26,7 @@ const MoreBtnHero = ({ moreBtn, loading }) => {
           sx={{ mr: 1 }}
         />
       }>
-      {moreBtn?.hero?.btns?.more?.label}
+      {moreBtn?.HERO?.btns?.more?.label}
     </Button>
   );
 };

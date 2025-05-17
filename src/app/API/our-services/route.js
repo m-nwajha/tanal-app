@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import connectMongodb from '@/config/mongodb';
-import { withApiKeyProtection } from '@/utils/apiKey';
+import { withApiKeyProtection } from '@/middlewares/apiKey';
 import OurServices from '@/models/ourServices';
 
 // This is a Next.js API route that handles GET and POST requests for "Our Services" data.
@@ -14,17 +14,17 @@ async function getHandler(req) {
 async function postHandler(req) {
   await connectMongodb();
 
-  const body = await req.json(); 
+  const body = await req.json();
 
   let doc = await OurServices.findOne();
 
   if (!doc) {
     doc = await OurServices.create({
-      OUR_SERVICES: [{ ...body, id: 1 }]
+      OUR_SERVICES: [{ ...body, id: 1 }],
     });
     return NextResponse.json({
       message: 'Created with first service',
-      data: doc
+      data: doc,
     });
   }
 
