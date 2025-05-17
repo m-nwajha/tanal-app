@@ -1,6 +1,10 @@
 import connectMongodb from '@/config/mongodb';
 import hello from '@/models/hello';
+<<<<<<< HEAD
 import { withApiKeyProtection } from '@/middlewares/apiKey';
+=======
+import { withApiKeyProtection } from '@/utils/apiKey';
+>>>>>>> 461fbe05ca982e46f1a4b1041765e200c9d02374
 import { NextResponse } from 'next/server';
 
 // export async function POST(request) {
@@ -20,6 +24,10 @@ import { NextResponse } from 'next/server';
 //   );
 // }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 461fbe05ca982e46f1a4b1041765e200c9d02374
 // export async function GET() {
 //     await connectMongodb();
 //     const homes = await home.find();
@@ -33,7 +41,11 @@ async function handlerPost(req) {
 
   await hello.create({
     title,
+<<<<<<< HEAD
     description,
+=======
+    description
+>>>>>>> 461fbe05ca982e46f1a4b1041765e200c9d02374
   });
 
   return NextResponse.json({ message: 'Success' }, { status: 201 });
@@ -41,6 +53,17 @@ async function handlerPost(req) {
 
 export const POST = withApiKeyProtection(handlerPost);
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+>>>>>>> 461fbe05ca982e46f1a4b1041765e200c9d02374
 async function handler(req) {
   await connectMongodb();
   const hellos = await hello.find();
@@ -48,4 +71,8 @@ async function handler(req) {
   return NextResponse.json({ hellos }, { status: 200 });
 }
 
+<<<<<<< HEAD
 export const GET = withApiKeyProtection(handler);
+=======
+export const GET = withApiKeyProtection(handler);
+>>>>>>> 461fbe05ca982e46f1a4b1041765e200c9d02374
