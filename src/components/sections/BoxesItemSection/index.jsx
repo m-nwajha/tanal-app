@@ -57,7 +57,7 @@ const BoxesItemSection = ({
                     key={cardItem.id}>
                     <CardItem
                       href={cardItem?.href || '#'}
-                      img={cardItem?.img}
+                      img={cardItem?.image}
                       title={cardItem?.title}
                       description={cardItem?.description}
                     />
