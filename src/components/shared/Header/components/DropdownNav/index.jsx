@@ -10,14 +10,17 @@ import useAPI from '@/hooks/useAPI';
 import DropdownNavItem from '../DropdownNavItem';
 
 // Import API Config.
-import { API_URL } from '@/config/API';
+import { API_KEY, API_URL } from '@/config/API';
+
+// Import constants.
+import { END_POINTS } from '@/constants/END_POINTS';
 
 // Import Style.
 import { StyledSubMenu } from './style';
 
 const DropdownNav = ({ titleMenuItem, onClick }) => {
   // Use API.
-  const { data, get } = useAPI(`${API_URL}${titleMenuItem}`);
+  const { data, get } = useAPI(END_POINTS.PROJECTS, API_KEY);
 
   // Use Effect.
   useEffect(() => {
@@ -30,7 +33,7 @@ const DropdownNav = ({ titleMenuItem, onClick }) => {
       {data.map(itemDropdown => {
         return (
           <DropdownNavItem
-            key={itemDropdown.id}
+            key={itemDropdown._id}
             getDataItem={itemDropdown}
             onClick={onClick}
           />
