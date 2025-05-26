@@ -1,0 +1,1 @@
+export const UPLOAD_PATH = 'https://tanal-app.onrender.com/uploads/';
