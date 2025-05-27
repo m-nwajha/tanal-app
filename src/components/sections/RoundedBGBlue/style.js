@@ -15,7 +15,7 @@ export const WrapperStyled = styled.div`
     width: 90%;
     z-index: -2;
     background-color: ${({ theme }) => theme.colors.primary};
-    border-radius: 90px 0  0 0px ;  
+    border-radius: 90px 0 0 0px;
   }
   &:before {
     content: '';
@@ -27,5 +27,11 @@ export const WrapperStyled = styled.div`
     background-position: right top;
     background-size: 30%;
     opacity: 0.1;
+  }
+  @media (${({theme})=>theme.media.tablet}) {
+    &:after {
+      width: 98%;
+      border-radius: 50px 0 0 0px;
+    }
   }
 `;
