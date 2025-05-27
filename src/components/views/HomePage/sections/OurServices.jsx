@@ -18,12 +18,7 @@ import { API_KEY } from '@/config/API';
 
 const OurServices = () => {
   // Use API.
-  const { data, get, loading } = useAPI(END_POINTS.OUR_SERVICES, {
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': API_KEY
-    }
-  });
+  const { data, get, loading } = useAPI(END_POINTS.SERVICES, API_KEY);
   // useEffect.
   useEffect(() => {
     get();
@@ -32,7 +27,7 @@ const OurServices = () => {
     <BoxesItemSection
       title={OUR_SERVICES.title}
       description={OUR_SERVICES.description}
-      cardItems={data?.OUR_SERVICES}
+      cardItems={data.slice(-5)}
       SkeletonItem={OUR_SERVICES.skeletonHome}
       moreHref={PATHS.SERVICES}
       loading={loading}

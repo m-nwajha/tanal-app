@@ -7,8 +7,10 @@ import { Typography } from '@mui/material';
 
 // Import Style.
 import { CardBottom, CardItemStyled } from './style';
+import { UPLOAD_PATH } from '@/constants/UPLOAD_PATH';
 
 const CardItem = ({ href, img, title, description }) => {
+  const imgDefault = '/assets/images/serv-img1.webp';
   // Define maxLength for description.
   const maxLength = 40;
   return (
@@ -18,7 +20,7 @@ const CardItem = ({ href, img, title, description }) => {
       <CardItemStyled>
         <Image
           fill
-          src={img}
+          src={img ? `${UPLOAD_PATH}${img}` : imgDefault}
           alt={title}
         />
         <div className='box_text'>

@@ -54,7 +54,7 @@ const BoxesItemSection = ({
                     item
                     size={{ sm: 10, md: 4 }}
                     alignSelf='center'
-                    key={cardItem.id}>
+                    key={cardItem._id}>
                     <CardItem
                       href={cardItem?.href || '#'}
                       img={cardItem?.image}
