@@ -29,7 +29,7 @@ const CounterItemText = ({ getData }) => {
       <Typography
         sx={{ color: 'black', fontWeight: '600' }}
         variant='h6'>
-        {getData.label}
+        {getData?.title}
       </Typography>
     </Stack>
   );
