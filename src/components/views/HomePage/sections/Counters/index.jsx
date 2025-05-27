@@ -16,7 +16,7 @@ import useAPI from '@/hooks/useAPI';
 import { CountersWrapperStyled } from './style';
 import { API_KEY } from '@/config/API';
 
-const Counters = ({ getDataConstant, getDataAPI }) => {
+const Counters = ({ getDataConstant }) => {
   // Use API.
   const { data, loading, get } = useAPI(END_POINTS.COUNTER, API_KEY);
 
