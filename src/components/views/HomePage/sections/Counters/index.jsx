@@ -25,7 +25,6 @@ const Counters = ({ getDataConstant, getDataAPI }) => {
     get();
   }, []);
 
-  console.log(data);
   return (
     <CountersWrapperStyled id='counters'>
       <Container maxWidth='lg'>
