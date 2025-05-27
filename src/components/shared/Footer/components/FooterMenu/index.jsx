@@ -39,7 +39,7 @@ const FooterMenu = ({ getData, title, iconTitle, loading }) => {
           getData.map(LinkItem => {
             return (
               <FooterMenuItem
-                key={LinkItem.id}
+                key={LinkItem._id || LinkItem.id}
                 LinkItem={LinkItem}
               />
             );

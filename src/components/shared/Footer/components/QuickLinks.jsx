@@ -4,13 +4,12 @@ import FooterMenu from './FooterMenu';
 // Import Constants.
 import { FOOTER } from '@/constants/FOOTER';
 
-const QuickLinks = ({ loading, getDataConstant }) => {
+const QuickLinks = () => {
   return (
     <FooterMenu
-      title={getDataConstant.QUICK_LINKS.title}
-      iconTitle={getDataConstant.QUICK_LINKS.iconTitle}
-      getData={getDataConstant.QUICK_LINKS.menuItem}
-      loading={loading}
+      title={FOOTER.QUICK_LINKS.title}
+      iconTitle={FOOTER.QUICK_LINKS.iconTitle}
+      getData={FOOTER.QUICK_LINKS.menuItem}
     />
   );
 };

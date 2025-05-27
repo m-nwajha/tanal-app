@@ -1,6 +1,7 @@
 'use client';
 // Import Next.
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 // Import MUI Components.
 import {
@@ -10,7 +11,7 @@ import {
   Skeleton,
   Stack,
   Typography,
-  useTheme
+  useTheme,
 } from '@mui/material';
 
 // Import Components.
@@ -19,10 +20,23 @@ import Logo from '@/components/atoms/Logo';
 // Import Constants.
 import { FOOTER } from '@/constants/FOOTER';
 import { PATHS } from '@/constants/PATHS';
+import useAPI from '@/hooks/useAPI';
+import { END_POINTS } from '@/constants/END_POINTS';
+import { API_KEY } from '@/config/API';
 
-const AboutFooter = ({ getDataAPI, loading }) => {
+const AboutFooter = ({ getDataAPI }) => {
+  // Use API.
+  const { data, loading, get } = useAPI(END_POINTS.BETWEEN_LINES, API_KEY);
+
+  // Use Effect.
+  useEffect(() => {
+    get();
+  }, []);
+  
   // Use Theme.
   const { colors } = useTheme();
+
+  const maxLength = 100;
 
   return (
     <Stack spacing={2}>
@@ -78,7 +92,9 @@ const AboutFooter = ({ getDataAPI, loading }) => {
           variant='body2'
           textAlign='right'
           color={colors.quaternary}>
-          {getDataAPI.description}...
+          {data[0]?.description.length > maxLength
+            ? data[0]?.description.slice(0, maxLength) + '...'
+            : data[0]?.description}
           <span>
             <Button
               component={Link}

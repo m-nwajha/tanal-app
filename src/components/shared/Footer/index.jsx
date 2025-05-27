@@ -5,9 +5,6 @@ import { useEffect } from 'react';
 // Import MUI Components.
 import { Container, Grid } from '@mui/material';
 
-// Import Hooks.
-import useAPI from '@/hooks/useAPI';
-
 // Import Components.
 import AboutFooter from './components/AboutFooter';
 import QuickLinks from './components/QuickLinks';
@@ -16,21 +13,12 @@ import SocialMedia from './components/SocialMedia';
 import Copyright from './components/Copyright';
 
 // Import Constants.
-import { END_POINTS } from '@/constants/END_POINTS';
 import { FOOTER } from '@/constants/FOOTER';
 
 // Import Style.
 import { FooterStyled } from './style';
 
 const Footer = () => {
-  // Use API.
-  const { data, loading, get } = useAPI(`${END_POINTS.FOOTER}`);
-
-  // Use Effect.
-  useEffect(() => {
-    get();
-  }, []);
-
   return (
     <FooterStyled>
       <Container maxWidth='lg'>
@@ -43,10 +31,7 @@ const Footer = () => {
           <Grid
             item
             size={{ xs: 12, md: 3 }}>
-            <AboutFooter
-              getDataAPI={data}
-              loading={loading}
-            />
+            <AboutFooter />
           </Grid>
 
           {/** Quick Links Grid */}
@@ -54,10 +39,7 @@ const Footer = () => {
             item
             alignSelf='start'
             size={{ xs: 10, md: 3 }}>
-            <QuickLinks
-              getDataConstant={FOOTER}
-              loading={loading}
-            />
+            <QuickLinks />
           </Grid>
 
           {/** Our Project Grid */}
@@ -78,9 +60,7 @@ const Footer = () => {
             size={{ xs: 10, md: 3 }}>
             <SocialMedia
               title={FOOTER.SOCIAL_MEDIA.title}
-              getData={data.socialMedia}
               iconTitle={FOOTER.SOCIAL_MEDIA.iconTitle}
-              loading={loading}
             />
           </Grid>
         </Grid>
