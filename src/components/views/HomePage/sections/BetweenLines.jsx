@@ -16,22 +16,18 @@ import { BETWEEN_LINES } from '@/constants/ABOUT';
 import { END_POINTS } from '@/constants/END_POINTS';
 
 const BetweenLines = () => {
-    // Use API.
-    const { data, get, loading } = useAPI(END_POINTS.ABOUT_US, {
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': API_KEY
-      }
-    });
-    // useEffect.
-    useEffect(() => {
-      get();
-    }, []);
+  // Use API.
+  const { data, loading, get } = useAPI(END_POINTS.BETWEEN_LINES, API_KEY);
+
+  // Use Effect.
+  useEffect(() => {
+    get();
+  }, []);
   return (
     <BlueBGAndImgs
       button={BETWEEN_LINES.button}
       title={BETWEEN_LINES.title}
-      description={data?.betweenLines?.description}
+      description={data[0]?.description}
       imagesList={BETWEEN_LINES?.images}
       loading={loading}
     />
