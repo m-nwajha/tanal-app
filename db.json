@@ -13,19 +13,19 @@
           "id": 1,
           "title": "العنوان هنا",
           "description": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص ",
-          "iconName": "BusinessCenterRoundedIcon"
+          "icon": "BusinessCenterRoundedIcon"
         },
         {
           "id": 2,
           "title": "العنوان هنا",
           "description": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص ",
-          "iconName": "BusinessCenterRoundedIcon"
+          "icon": "BusinessCenterRoundedIcon"
         },
         {
           "id": 3,
           "title": "العنوان هنا",
           "description": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص ",
-          "iconName": "BusinessCenterRoundedIcon"
+          "icon": "BusinessCenterRoundedIcon"
         }
       ]
     }
