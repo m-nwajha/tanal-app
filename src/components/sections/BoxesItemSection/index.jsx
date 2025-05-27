@@ -35,7 +35,7 @@ const BoxesItemSection = ({
                 return (
                   <Grid
                     item
-                    size={{ sm: 10, md: 4 }}
+                    size={{ sm: 10, xs: 12, md: 6, lg: 4 }}
                     alignSelf='center'
                     key={item}>
                     <Skeleton
@@ -52,7 +52,7 @@ const BoxesItemSection = ({
                 return (
                   <Grid
                     item
-                    size={{ sm: 10, md: 4 }}
+                    size={{ sm: 12, xs: 12, md: 6, lg: 4 }}
                     alignSelf='center'
                     key={cardItem._id}>
                     <CardItem
@@ -64,15 +64,17 @@ const BoxesItemSection = ({
                   </Grid>
                 );
               })}
-          { // Show MoreCard if moreHref is provided
-          moreHref && (
-            <Grid
-              item
-              size={{ sm: 10, md: 4 }}
-              alignSelf='center'>
-              <MoreCard moreHref={moreHref} />
-            </Grid>
-          )}
+          {
+            // Show MoreCard if moreHref is provided
+            moreHref && (
+              <Grid
+                item
+                size={{ sm: 10, xs: 12, md: 6, lg: 4 }}
+                alignSelf='center'>
+                <MoreCard moreHref={moreHref} />
+              </Grid>
+            )
+          }
         </Grid>
       </Container>
     </WrapperStyled>
