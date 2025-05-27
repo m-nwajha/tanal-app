@@ -3,21 +3,30 @@ import { StyledReviewItem } from './style';
 import FormatQuoteRoundedIcon from '@mui/icons-material/FormatQuoteRounded';
 import { Avatar, CardContent, Stack, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
+import { UPLOAD_PATH } from '@/constants/UPLOAD_PATH';
 
-const ReviewItem = () => {
+const ReviewItem = ({ getData }) => {
   const { colors } = useTheme();
+  const maxLength = 150;
   return (
     <StyledReviewItem>
       <div className='icon'>
         <FormatQuoteRoundedIcon />
       </div>
       <CardContent>
+        <Avatar
+          sx={{ mb: 2, height: 60, width: 60 }}
+          variant='circular'
+          src={`${UPLOAD_PATH}${getData?.image}`}
+          alt={getData?.name}
+        />
         <Typography
           lineHeight={2}
           variant='body2'
           color='secondary'>
-          هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
-          النص من مولد النص العربى
+          {getData?.reviewText.length > maxLength
+            ? getData?.reviewText.substring(0, maxLength) + '...'
+            : getData?.reviewText}
         </Typography>
         <Stack
           justifyContent='center'
@@ -27,12 +36,12 @@ const ReviewItem = () => {
             color={colors.tertiary}
             variant='subtitle1'
             fontWeight='bold'>
-            أحمد علي
+            {getData?.name}
           </Typography>
           <Typography
             variant='body2'
             color='textDisabled'>
-            مدير التسويق
+            {getData?.jobTitle}
           </Typography>
         </Stack>
       </CardContent>

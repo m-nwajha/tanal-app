@@ -4,8 +4,10 @@ import { Stack } from '@mui/material';
 // Import Components.
 import H from '@/components/ui/HeadingSection';
 import D from '@/components/ui/DescriptionSection';
+import { REVIEWS } from '@/constants/REVIEWS';
 
-const SectionHeader = ({ title, description }) => {
+const SectionHeader = () => {
+  const {title , description} = REVIEWS
   return (
     <Stack
       spacing={4}

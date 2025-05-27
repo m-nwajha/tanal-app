@@ -12,6 +12,7 @@ export const StyledReviewItem = styled(Card)`
   border-radius: 20px 0 20px 0;
   overflow: initial;
   border: 1px solid;
+  margin-top: 40px;
   // before style.
   &:before {
     content: '';
