@@ -1,6 +1,5 @@
-import { Container, Grid, Typography, Box, useTheme } from '@mui/material';
+import { Container, Grid, Box, useTheme } from '@mui/material';
 import ContactForm from './components/ContactForm';
-import ContactInfo from './components/ContactInfo';
 import MapEmbed from './components/MapEmbed';
 import bg from '@images/back.svg';
 
@@ -39,7 +38,6 @@ const ContactSection = () => {
             alignSelf={'center'}
             size={{ sm: 12, md: 6 }}>
             <MapEmbed />
-            {/* <ContactInfo /> */}
           </Grid>
         </Grid>
       </Container>

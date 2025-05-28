@@ -9,7 +9,6 @@ import BetweenLines from './sections/BetweenLines';
 import OurServices from './sections/OurServices';
 import OurProjects from './sections/OurProjects';
 import Reviews from './sections/Reviews';
-import ContactSection from '@/components/sections/ContactSection';
 import ClientsSection from '@/components/sections/ClientsSection';
 const HomePage = () => {
   return (
@@ -25,7 +24,6 @@ const HomePage = () => {
       <OurProjects />
       <Reviews />
       <ClientsSection />
-      <ContactSection />
     </>
   );
 };
