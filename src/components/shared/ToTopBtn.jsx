@@ -40,6 +40,7 @@ const ToTopBtn = () => {
             '0 0.125rem 0.125rem -0.125rem rgba(31, 27, 45, 0.08), 0 0.25rem 0.75rem rgba(31, 27, 45, 0.08)',
           'border': 0,
           '&:hover': {
+            backgroundColor: theme.palette.secondary.main,
             opacity: 0.9,
           },
         }}>

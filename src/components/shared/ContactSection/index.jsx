@@ -8,7 +8,7 @@ const ContactSection = () => {
   return (
     <Box
       component='section'
-      id='contact'
+      id='contact-us'
       sx={{
         'backgroundColor': '#8490c89e',
         'py': 6,
