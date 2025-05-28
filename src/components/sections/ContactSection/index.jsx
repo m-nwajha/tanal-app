@@ -35,7 +35,7 @@ const ContactSection = () => {
           </Grid>
           <Grid
             item
-            spacing={4}
+            spacing={5}
             alignSelf={'center'}
             size={{ sm: 12, md: 6 }}>
             <MapEmbed />

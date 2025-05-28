@@ -14,13 +14,16 @@ const useAPI = (
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const resetError = () => setError(null);
+
   const get = async () => {
     setLoading(true);
+    setError(null);
     try {
       const res = await axios.get(url, { headers: config() });
       setData(res.data);
     } catch (err) {
-      setError(err);
+      setError(err?.response?.data?.message || 'فشل جلب البيانات');
     } finally {
       setLoading(false);
     }
@@ -28,11 +31,12 @@ const useAPI = (
 
   const del = async id => {
     setLoading(true);
+    setError(null);
     try {
       await axios.delete(`${url}/${id}`, { headers: config() });
       setData(prev => prev.filter(item => item.id !== id));
     } catch (err) {
-      setError(err);
+      setError(err?.response?.data?.message || 'فشل الحذف');
     } finally {
       setLoading(false);
     }
@@ -40,11 +44,14 @@ const useAPI = (
 
   const post = async body => {
     setLoading(true);
+    setError(null);
     try {
       const res = await axios.post(url, body, { headers: config() });
       setData(prev => [...prev, res.data]);
+      return true; // ✅ عملية ناجحة
     } catch (err) {
-      setError(err);
+      setError(err?.response?.data?.message || 'فشل الإرسال');
+      return false; // ❌ عملية فاشلة
     } finally {
       setLoading(false);
     }
@@ -52,6 +59,7 @@ const useAPI = (
 
   const put = async body => {
     setLoading(true);
+    setError(null);
     try {
       const res = await axios.put(`${url}/${body.id}`, body, {
         headers: config(),
@@ -59,14 +67,16 @@ const useAPI = (
       setData(prev =>
         prev.map(item => (item.id === body.id ? res.data : item))
       );
+      return true;
     } catch (err) {
-      setError(err);
+      setError(err?.response?.data?.message || 'فشل التحديث');
+      return false;
     } finally {
       setLoading(false);
     }
   };
 
-  return { data, loading, error, get, del, post, put };
+  return { data, loading, error, get, del, post, put, resetError };
 };
 
 export default useAPI;

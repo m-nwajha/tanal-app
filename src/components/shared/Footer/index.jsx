@@ -10,6 +10,7 @@ import AboutFooter from './components/AboutFooter';
 import QuickLinks from './components/QuickLinks';
 import OurProjects from './components/OurProjects';
 import SocialMedia from './components/SocialMedia';
+import ContactInfo from './components/ContactInfo';
 import Copyright from './components/Copyright';
 
 // Import Constants.
