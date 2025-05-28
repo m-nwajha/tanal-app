@@ -8,5 +8,6 @@ export const END_POINTS = {
   CONTACT: `${API_URL}/contact`,
   CONTACT_INFO: `${API_URL}/contact-info`,
   BOARD_DIRECTORS: `${API_URL}/boardDirectors`,
-  BETWEEN_LINES: `${API_URL}/between-lines`
+  BETWEEN_LINES: `${API_URL}/between-lines`,
+  CLIENTS: `${API_URL}/clients`,
 };
