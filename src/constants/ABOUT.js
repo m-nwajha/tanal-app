@@ -2,8 +2,10 @@
 import { PATHS } from './PATHS';
 
 // Import icons from Material UI.
-import ContactSupportRoundedIcon from '@mui/icons-material/ContactSupportRounded';
-import BusinessCenterRoundedIcon from '@mui/icons-material/BusinessCenterRounded';
+import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
+import BadgeRoundedIcon from '@mui/icons-material/BadgeRounded';
+import AccountTreeRoundedIcon from '@mui/icons-material/AccountTreeRounded';
+import TagFacesRoundedIcon from '@mui/icons-material/TagFacesRounded';
 
 export const ABOUT_BREADCRUMB = {
   title: 'عن تنال',
@@ -13,6 +15,7 @@ export const ABOUT_BREADCRUMB = {
 
 export const BETWEEN_LINES = {
   title: 'تنال بين السطور',
+  title2: 'تعريف تنال الأولى للاستثمار',
   button: {
     label: 'تعرف المزيد',
     href: PATHS.ABOUT,
@@ -58,11 +61,15 @@ export const BETWEEN_LINES = {
       height: 30,
       src: false,
     },
-  ],
-  whyTanal: {
-    listTitle: { title: 'لماذا تنال؟', icon: <ContactSupportRoundedIcon /> },
-    icon: {
-      test: <BusinessCenterRoundedIcon />,
-    },
-  },
+  ]
 };
+export const  WHY_TANAL = {
+  title: 'لماذا تنال؟',
+  description: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
+  icons: {
+    client: <PeopleRoundedIcon />,
+    employer: <BadgeRoundedIcon />,
+    project: <AccountTreeRoundedIcon />,
+    happy: <TagFacesRoundedIcon />,
+  },
+}

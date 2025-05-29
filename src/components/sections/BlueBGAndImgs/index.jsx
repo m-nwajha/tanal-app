@@ -17,13 +17,20 @@ import SectionImages from './components/SectionImages';
 // Import Style.
 import { WrapperSectionStyled } from './style';
 
-const BlueBGAndImgs = ({ button, title, description, imagesList, loading }) => {
+const BlueBGAndImgs = ({
+  button,
+  title,
+  description,
+  imagesList,
+  loading,
+  type,
+}) => {
   // Use Theme.
   const { colors } = useTheme();
 
   return (
     //Style Wrapper
-    <WrapperSectionStyled>
+    <WrapperSectionStyled type={type}>
       {/** Container */}
       <Container maxWidth='lg'>
         {/**  Section Row */}
@@ -50,6 +57,7 @@ const BlueBGAndImgs = ({ button, title, description, imagesList, loading }) => {
                 <SectionTextSkeleton />
               ) : (
                 <SectionText
+                  type={type}
                   title={title}
                   description={description}
                 />
@@ -72,7 +80,7 @@ const BlueBGAndImgs = ({ button, title, description, imagesList, loading }) => {
                         backgroundColor: colors.quaternary,
                         color: colors.primary,
                         fontWeight: 600,
-                        borderRadius: '10px'
+                        borderRadius: '10px',
                       }}>
                       {button?.label}
                     </Button>

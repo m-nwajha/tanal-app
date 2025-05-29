@@ -5,7 +5,9 @@ import bg from '@images/bg-pattern.png';
 
 export const WrapperSectionStyled = styled.div`
   padding-block: 5rem;
-  background: url(${bg.src}) repeat ${props => props.theme.colors.primary};
+  background: url(${bg.src}) repeat
+    ${({ theme, type }) =>
+      type === 'light' ? theme.colors.quinary : theme.colors.primary};
   background-size: 5%;
   position: relative;
 `;

@@ -17,9 +17,9 @@ import { CountersWrapperStyled } from './style';
 import { API_KEY } from '@/config/API';
 import { ICONS } from '@/constants/ICONS';
 
-const Counters = ({ getDataConstant }) => {
+const SectionIconList = ({ getDataConstant , getDataAPI }) => {
   // Use API.
-  const { data, loading, get } = useAPI(END_POINTS.COUNTER, API_KEY);
+  const { data, loading, get } = useAPI(END_POINTS.WHY_TANAL, API_KEY);
 
   // Use Effect.
   useEffect(() => {
@@ -30,7 +30,7 @@ const Counters = ({ getDataConstant }) => {
     <CountersWrapperStyled id='counters'>
       <Container maxWidth='lg'>
         {/** Counter Section Header */}
-        <CountersSectionHeader getData={getDataConstant?.COUNTERS} />
+        <CountersSectionHeader getData={getDataConstant} />
 
         {/** Counter Items */}
         <Grid
@@ -39,7 +39,7 @@ const Counters = ({ getDataConstant }) => {
           alignItems='center'
           spacing={6}>
           {loading
-            ? Object.entries(getDataConstant?.COUNTERS?.icons).map(([key]) => {
+            ? Object.entries(getDataConstant?.icons).map(([key]) => {
                 return (
                   <Grid
                     mt={9}
@@ -73,4 +73,4 @@ const Counters = ({ getDataConstant }) => {
   );
 };
 
-export default Counters;
+export default SectionIconList;

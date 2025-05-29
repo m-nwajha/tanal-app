@@ -10,4 +10,5 @@ export const END_POINTS = {
   BOARD_DIRECTORS: `${API_URL}/boardDirectors`,
   BETWEEN_LINES: `${API_URL}/between-lines`,
   CLIENTS: `${API_URL}/clients`,
+  WHY_TANAL: `${API_URL}/why-tanal`,
 };

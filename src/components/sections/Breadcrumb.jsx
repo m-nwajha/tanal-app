@@ -10,8 +10,8 @@ import {
 import HomeIcon from '@mui/icons-material/Home';
 
 // Import Components.
-import H from '@/components/atoms/HeadingSection';
-import D from '@/components/atoms/DescriptionSection';
+import H from '@/components/ui/HeadingSection';
+import D from '@/components/ui/DescriptionSection';
 
 const Breadcrumb = ({ title, description, breadcrumbHistory }) => {
   const theme = useTheme();

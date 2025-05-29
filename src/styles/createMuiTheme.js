@@ -26,15 +26,6 @@ export const THEME = {
 export const muiTheme = createTheme(
   {
     direction: 'rtl',
-    // breakpoints: {
-    //   values: {
-    //     xs: THEME.media.mobile,
-    //     sm: THEME.media.tablet,
-    //     md: THEME.media.desktop,
-    //     lg: 1440,
-    //     xl: 1920,
-    //   },
-    // },
     palette: {
       primary: { main: THEME.colors.primary },
       secondary: { main: THEME.colors.secondary },

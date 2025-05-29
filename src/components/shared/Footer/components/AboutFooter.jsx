@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 
 // Import Components.
-import Logo from '@/components/atoms/Logo';
+import Logo from '@/components/ui/Logo';
 
 // Import Constants.
 import { FOOTER } from '@/constants/FOOTER';

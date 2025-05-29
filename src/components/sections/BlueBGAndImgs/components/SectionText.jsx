@@ -5,14 +5,14 @@ import { Stack, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
 
 // Import Components.
-import H from '@/components/atoms/HeadingSection';
+import H from '@/components/ui/HeadingSection';
 
-const SectionText = ({ title, description }) => {
+const SectionText = ({ title, description, type }) => {
   const { colors, fontFamily } = useTheme();
   return (
     <Stack spacing={4}>
       <H
-        type='dark'
+        type={type === 'light' ? 'light' : 'dark'}
         variant='h4'>
         {title}
       </H>
@@ -21,7 +21,7 @@ const SectionText = ({ title, description }) => {
         lineHeight={2}
         variant='body1'
         fontFamily={fontFamily.IBM}
-        color={colors.quinary}>
+        color={type === 'light' ? colors.primary : colors.quinary}>
         {description}
       </Typography>
     </Stack>
