@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import BoxesItemSection from '@/components/sections/BoxesItemSection';
 
 // Import constants.
-import { OUR_SERVICES } from '@/constants/OUR SERVICES';
+import { OUR_SERVICES } from '@/constants/OUR_SERVICES';
 import { END_POINTS } from '@/constants/END_POINTS';
 import { PATHS } from '@/constants/PATHS';
 

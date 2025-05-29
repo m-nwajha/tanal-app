@@ -6,5 +6,6 @@ export const META_DATA = {
 
 export const PAGES_META_DATA = {
   home: `الصفحة الرئيسية | ${META_DATA.title}`,
-  about: `عن تنال | ${META_DATA.title}`
+  about: `عن تنال | ${META_DATA.title}`,
+  services: `خدماتنا | ${META_DATA.title}`,
 };

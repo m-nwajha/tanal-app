@@ -15,15 +15,17 @@ const BoxesItemSection = ({
   cardItems,
   moreHref,
   SkeletonItem,
-  loading
+  loading,
 }) => {
   return (
     <WrapperStyled>
       <Container maxWidth='lg'>
-        <SectionHeader
-          title={title}
-          description={description}
-        />
+        {title && (
+          <SectionHeader
+            title={title}
+            description={description}
+          />
+        )}
         <Grid
           container
           justifyContent='center'
