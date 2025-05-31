@@ -10,6 +10,7 @@ import ToTopBtn from '../shared/ToTopBtn';
 
 import ContactSection from '../shared/ContactSection';
 import CustomCursor from '../ui/CustomCursor';
+import WhatsappIcon from '../ui/WhatsappIcon';
 
 
 const MainLayout = ({ children }) => {
@@ -19,6 +20,7 @@ const MainLayout = ({ children }) => {
       <Header />
       {children}
       <ContactSection />
+      <WhatsappIcon />
       <ToTopBtn />
       <Footer />
     </>
