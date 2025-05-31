@@ -38,7 +38,7 @@ const ContactInfo = ({ getData, loading }) => {
             alignItems: 'center',
             color: theme.palette.quinary?.main,
           }}>
-          {loading ? (
+          {loading || !getData ? (
             <Skeleton
               variant='text'
               width={item.skeletonWidth}

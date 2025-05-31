@@ -23,8 +23,9 @@ import { PATHS } from '@/constants/PATHS';
 import useAPI from '@/hooks/useAPI';
 import { END_POINTS } from '@/constants/END_POINTS';
 import { API_KEY } from '@/config/API';
+import { skeletonArr } from '@/utils/skeletonArr';
 
-const AboutFooter = ({ getDataAPI }) => {
+const AboutFooter = () => {
   // Use API.
   const { data, loading, get } = useAPI(END_POINTS.BETWEEN_LINES, API_KEY);
 
@@ -32,7 +33,7 @@ const AboutFooter = ({ getDataAPI }) => {
   useEffect(() => {
     get();
   }, []);
-  
+
   // Use Theme.
   const { colors } = useTheme();
 
@@ -44,46 +45,29 @@ const AboutFooter = ({ getDataAPI }) => {
         container
         alignItems='center'
         spacing={2}>
-        {loading ? (
-          <Skeleton
-            sx={{ bgcolor: 'secondary', borderRadius: '10px 0 10px 0' }}
-            width={63}
-            height={140}
-          />
-        ) : (
-          <Logo
-            height={80}
-            variant='light'
-          />
-        )}
+        <Logo
+          height={80}
+          variant='light'
+        />
         <Typography
           variant='h6'
           fontSize='1.3rem'
           fontWeight='600'
           color={colors.quinary}>
-          {loading ? (
-            <Skeleton
-              width={150}
-              variant='text'
-              sx={{ fontSize: '1.4rem' }}
-            />
-          ) : (
-            FOOTER.TITLE
-          )}
+          {FOOTER.TITLE}
         </Typography>
       </Grid>
-      {loading ? (
+      {loading || data.length === 0 ? (
         <Box>
+          {skeletonArr(3).map((_, index) => (
+            <Skeleton
+              key={index}
+              sx={{ width: '100%', fontSize: '1rem' }}
+              variant='text'
+            />
+          ))}
           <Skeleton
-            sx={{ width: '100%', fontSize: '1rem' }}
-            variant='text'
-          />
-          <Skeleton
-            sx={{ width: '100%', fontSize: '1rem' }}
-            variant='text'
-          />
-          <Skeleton
-            sx={{ width: '40%', fontSize: '1rem' }}
+            sx={{ width: '30%', fontSize: '1rem' }}
             variant='text'
           />
         </Box>

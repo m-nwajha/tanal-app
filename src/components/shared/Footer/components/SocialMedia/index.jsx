@@ -16,6 +16,7 @@ import { API_KEY } from '@/config/API';
 // Import Style.
 import { SocialMediaStyled } from './style';
 import ContactInfo from '../ContactInfo';
+import { skeletonArr } from '@/utils/skeletonArr';
 
 const SocialMedia = ({ title, iconTitle }) => {
   // Use API.
@@ -28,47 +29,27 @@ const SocialMedia = ({ title, iconTitle }) => {
   return (
     <>
       <Stack spacing={3}>
-        {loading ? (
-          <Skeleton
-            sx={{ width: '100%', height: '90px', fontSize: '1.2rem' }}
-            variant='text'
-          />
-        ) : (
-          <FooterHeading icon={iconTitle}>{title}</FooterHeading>
-        )}
+        <FooterHeading icon={iconTitle}>{title}</FooterHeading>
         <SocialMediaStyled>
-          {loading ? (
-            <>
-              <Skeleton
-                sx={{ width: '40px', height: '60px', borderRadius: '10px' }}
-                variant='text'
-              />
-              <Skeleton
-                sx={{ width: '40px', height: '60px', borderRadius: '10px' }}
-                variant='text'
-              />
-              <Skeleton
-                sx={{ width: '40px', height: '60px', borderRadius: '10px' }}
-                variant='text'
-              />
-              <Skeleton
-                sx={{ width: '40px', height: '60px', borderRadius: '10px' }}
-                variant='text'
-              />
-            </>
-          ) : (
-            data[0]?.socialMedia?.map(soItem => {
-              const { icon, URL } = SOCIAL_MEDIA_ICON[soItem.icon];
-              return (
-                <SocialMediaItem
-                  key={soItem._id}
-                  title={soItem.label}
-                  href={`${URL}${soItem.url}`}
-                  icon={icon}
+          {loading || data.length === 0
+            ? skeletonArr(4).map((_, index) => (
+                <Skeleton
+                  key={index}
+                  sx={{ width: '40px', height: '60px', borderRadius: '10px' }}
+                  variant='text'
                 />
-              );
-            })
-          )}
+              ))
+            : data[0]?.socialMedia?.map(soItem => {
+                const { icon, URL } = SOCIAL_MEDIA_ICON[soItem.icon];
+                return (
+                  <SocialMediaItem
+                    key={soItem._id}
+                    title={soItem.label}
+                    href={`${URL}${soItem.url}`}
+                    icon={icon}
+                  />
+                );
+              })}
         </SocialMediaStyled>
         {/** add here google play Store and Apple Icons*/}
       </Stack>

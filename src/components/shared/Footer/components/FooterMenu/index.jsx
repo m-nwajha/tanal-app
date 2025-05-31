@@ -7,34 +7,23 @@ import FooterHeading from '../FooterHeading';
 
 // Import Style.
 import { FooterMenuStyled } from './style';
+import { skeletonArr } from '@/utils/skeletonArr';
 
 const FooterMenu = ({ getData, title, iconTitle, loading }) => {
   return (
     <Stack spacing={3}>
-      {loading ? (
-        <Skeleton
-          sx={{ width: '100%', height: '90px', fontSize: '1.2rem' }}
-          variant='text'
-        />
-      ) : (
-        <FooterHeading icon={iconTitle}>{title}</FooterHeading>
-      )}
+      <FooterHeading icon={iconTitle}>{title}</FooterHeading>
       <FooterMenuStyled>
-        {loading ? (
-          <Box sx={{ width: '100%' }}>
-            <Skeleton
-              sx={{ width: '60%', fontSize: '1.2rem' }}
-              variant='text'
-            />
-            <Skeleton
-              sx={{ width: '60%', fontSize: '1.2rem' }}
-              variant='text'
-            />
-            <Skeleton
-              sx={{ width: '60%', fontSize: '1.2rem' }}
-              variant='text'
-            />
-          </Box>
+        {loading || getData.length === 0 ? (
+          <Stack spacing={2} sx={{ width: '100%' }}>
+            {skeletonArr(4).map((_, index) => (
+              <Skeleton
+                key={index}
+                sx={{ width: '60%', fontSize: '1.2rem' }}
+                variant='text'
+              />
+            ))}
+          </Stack>
         ) : (
           getData.map(LinkItem => {
             return (
