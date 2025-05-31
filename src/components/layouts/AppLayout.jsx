@@ -6,11 +6,15 @@ import { THEME } from '@/styles/theme';
 
 // Import Constants.
 import { muiTheme } from '@/styles/createMuiTheme';
+import TopLoader from '../ui/TopLoader';
 
 const AppLayout = ({ children }) => {
   return (
     <MuiThemeProvider theme={muiTheme}>
-      <EmotionThemeProvider theme={THEME}>{children}</EmotionThemeProvider>
+      <EmotionThemeProvider theme={THEME}>
+        <TopLoader />
+        {children}
+      </EmotionThemeProvider>
     </MuiThemeProvider>
   );
 };

@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { PATHS } from '@/constants/PATHS';
 import { LOGO } from '@/constants/LOGO';
 
-const Logo = ({ variant, height }) => {
+const Logo = ({ variant, height, unLiked, moreStyle }) => {
   const src =
     variant === 'light'
       ? LOGO.TITLE_LIGHT
@@ -18,10 +18,11 @@ const Logo = ({ variant, height }) => {
   return (
     <Box
       component={Link}
-      href={PATHS.HOME}
+      href={unLiked ? '#' : PATHS.HOME}
       sx={{
         display: 'flex',
         alignItems: 'center',
+        moreStyle,
       }}>
       <Image
         height={height}

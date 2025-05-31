@@ -9,10 +9,13 @@ import Footer from '../shared/Footer';
 import ToTopBtn from '../shared/ToTopBtn';
 
 import ContactSection from '../shared/ContactSection';
+import CustomCursor from '../ui/CustomCursor';
+
 
 const MainLayout = ({ children }) => {
   return (
     <>
+      <CustomCursor />
       <Header />
       {children}
       <ContactSection />

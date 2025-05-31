@@ -3,6 +3,7 @@ import { ABOUT_BREADCRUMB } from '@/constants/ABOUT';
 import BetweenLines from './sections/BetweenLines';
 import WhyTanal from './sections/WhyTanal';
 import Vision from './sections/Vision';
+import BoardDirectors from './sections/BoardDirectors';
 
 const AboutPage = () => {
   return (
@@ -15,10 +16,7 @@ const AboutPage = () => {
       <BetweenLines />
       <WhyTanal />
       <Vision />
-      <div
-        style={{
-          height: '100vh',
-        }}></div>
+      <BoardDirectors />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, Box, useTheme } from '@mui/material';
+import { Container, Grid, Box } from '@mui/material';
 import TeamMember from './TeamMember';
 import SectionHeader from '@/components/ui/SectionHeader';
 
@@ -26,7 +26,6 @@ const members = [
 ];
 
 const TeamSection = () => {
-  const theme = useTheme();
 
   return (
     <Box
