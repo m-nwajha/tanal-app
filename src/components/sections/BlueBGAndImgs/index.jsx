@@ -53,7 +53,7 @@ const BlueBGAndImgs = ({
             item
             size={{ sm: 12, lg: 7 }}>
             <Stack spacing={2}>
-              {loading ? (
+              {loading || !description ? (
                 <SectionTextSkeleton />
               ) : (
                 <SectionText
@@ -64,7 +64,7 @@ const BlueBGAndImgs = ({
               )}
               {button && (
                 <div>
-                  {loading ? (
+                  {loading || !description ? (
                     <Skeleton
                       variant='text'
                       width='9rem'

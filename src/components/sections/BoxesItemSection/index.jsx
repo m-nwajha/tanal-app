@@ -8,13 +8,13 @@ import MoreCard from './components/MoreCard';
 
 // Import Style.
 import { WrapperStyled } from './style';
+import { skeletonArr } from '@/utils/skeletonArr';
 
 const BoxesItemSection = ({
   title,
   description,
   cardItems,
   moreHref,
-  SkeletonItem,
   loading,
 }) => {
   return (
@@ -31,15 +31,14 @@ const BoxesItemSection = ({
           justifyContent='center'
           alignItems='center'
           spacing={8}>
-          {loading
-            ? // Show Skeleton if loading is true
-              SkeletonItem?.map(item => {
+          {loading || cardItems.length === 0
+            ? skeletonArr(moreHref ? 5 : 6)?.map((_, index) => {
                 return (
                   <Grid
                     item
                     size={{ sm: 10, xs: 12, md: 6, lg: 4 }}
                     alignSelf='center'
-                    key={item}>
+                    key={index}>
                     <Skeleton
                       variant='rounded'
                       sx={{ borderRadius: '16px' }}

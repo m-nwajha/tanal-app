@@ -1,15 +1,15 @@
 import { UPLOAD_PATH } from '@/constants/UPLOAD_PATH';
+import { skeletonArr } from '@/utils/skeletonArr';
 import { Grid, Box, Skeleton } from '@mui/material';
 import Image from 'next/image';
 
 const ClientItem = ({ getData, isLoading }) => {
-    const placeholderItems = new Array(6).fill(null);
   return (
     <Grid
       container
       spacing={2}
       justifyContent='center'>
-      {(isLoading ? placeholderItems : getData).map((item, index) => (
+      {(isLoading || getData.length === 0 ? skeletonArr(6) : getData).map((item, index) => (
         <Grid
           item
           xs={6}
@@ -29,7 +29,7 @@ const ClientItem = ({ getData, isLoading }) => {
               'alignItems': 'center',
               'p': 1,
             }}>
-            {item ? (
+            {item || !getData.length === 0? (
               <Image
                 src={`${UPLOAD_PATH}${item.image}`}
                 alt={item.title}

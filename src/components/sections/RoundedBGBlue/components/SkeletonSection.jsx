@@ -1,7 +1,7 @@
-import { Grid, Skeleton, Box } from '@mui/material';
+import { skeletonArr } from '@/utils/skeletonArr';
+import { Grid, Skeleton } from '@mui/material';
 
 const SkeletonSection = () => {
-  const skeletonArray = Array.from({ length: 4 });
 
   return (
     <Grid
@@ -9,7 +9,7 @@ const SkeletonSection = () => {
       justifyContent='center'
       alignItems='center'
       spacing={3}>
-      {skeletonArray.map((_, index) => (
+      {skeletonArr(4).map((_, index) => (
         <Grid
           key={index}
           item

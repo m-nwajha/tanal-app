@@ -25,7 +25,7 @@ const Reviews = () => {
     <WrapperStyled>
       <Container maxWidth='lg'>
         <SectionHeader />
-        {loading ? (
+        {loading || data.length === 0 ? (
           <SkeletonSection />
         ) : (
           <Swiper

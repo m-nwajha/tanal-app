@@ -15,7 +15,7 @@ const RoundedBGBlue = ({ title, description, items, loading }) => {
           title={title}
           description={description}
         />
-        {loading ? (
+        {loading || items.length === 0 ? (
           <SkeletonSection />
         ) : (
           <Grid

@@ -1,15 +1,14 @@
+import { skeletonArr } from '@/utils/skeletonArr';
 import { Grid, Skeleton } from '@mui/material';
 
 const SkeletonSection = () => {
-  const skeletonArray = Array.from({ length: 3 });
-
   return (
     <Grid
       container
       justifyContent='center'
       alignItems='center'
       spacing={3}>
-      {skeletonArray.map((_, index) => (
+      {skeletonArr(3).map((_, index) => (
         <Grid
           key={index}
           item
