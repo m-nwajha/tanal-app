@@ -16,8 +16,9 @@ import useAPI from '@/hooks/useAPI';
 import { CountersWrapperStyled } from './style';
 import { API_KEY } from '@/config/API';
 import { ICONS } from '@/constants/ICONS';
+import { skeletonArr } from '@/utils/skeletonArr';
 
-const SectionIconList = ({ getDataConstant , getDataAPI }) => {
+const SectionIconList = ({ getDataConstant, getDataAPI }) => {
   // Use API.
   const { data, loading, get } = useAPI(END_POINTS.WHY_TANAL, API_KEY);
 
@@ -38,15 +39,15 @@ const SectionIconList = ({ getDataConstant , getDataAPI }) => {
           justifyContent='center'
           alignItems='center'
           spacing={6}>
-          {loading
-            ? Object.entries(getDataConstant?.icons).map(([key]) => {
+          {loading || data.length === 0
+            ? skeletonArr(4).map((_, index) => {
                 return (
                   <Grid
                     mt={9}
                     item
                     size={{ sm: 5, xs: 11 }}
                     alignSelf='center'
-                    key={key}>
+                    key={index}>
                     <CounterItemSkeleton />
                   </Grid>
                 );
