@@ -1,32 +1,10 @@
-import { Container, Grid, Box } from '@mui/material';
+import { Container, Grid, Box, Skeleton } from '@mui/material';
 import TeamMember from './TeamMember';
 import SectionHeader from '@/components/ui/SectionHeader';
+import { skeletonArr } from '@/utils/skeletonArr';
 
-const members = [
-  {
-    name: 'معتصم الهاشمي',
-    role: 'رئيس مجلس الإدارة',
-    image: '/assets/images/motasem.png',
-  },
-  {
-    name: 'معتصم الهاشمي',
-    role: 'رئيس مجلس الإدارة',
-    image: '/assets/images/motasem.png',
-  },
-  {
-    name: 'معتصم الهاشمي',
-    role: 'رئيس مجلس الإدارة',
-    image: '/assets/images/motasem.png',
-  },
-  {
-    name: 'معتصم الهاشمي',
-    role: 'رئيس مجلس الإدارة',
-    image: '/assets/images/motasem.png',
-  },
-];
 
-const TeamSection = () => {
-
+const TeamSection = ({ getDataAPI, loading }) => {
   return (
     <Box
       id='team'
@@ -43,14 +21,34 @@ const TeamSection = () => {
         <Grid
           container
           spacing={4}>
-          {members.map((member, index) => (
-            <Grid
-              item
-              size={{ sm: 6, md: 3 }}
-              key={index}>
-              <TeamMember {...member} />
-            </Grid>
-          ))}
+          {loading || getDataAPI.length === 0
+            ? skeletonArr(4).map((_, index) => (
+                <Grid
+                  item
+                  size={{xs: 12 , md:3 }}
+                  display='flex'
+                  justifyContent='center'
+                  alignItems='center'
+                  key={index}>
+                  <Skeleton
+                    variant='circular'
+                    width='270px'
+                    height='270px'
+                  />
+                </Grid>
+              ))
+            : getDataAPI.map(memberItem => (
+                <Grid
+                  item
+                  size={{ sm: 6, md: 3 }}
+                  key={memberItem._id}>
+                  <TeamMember
+                    name={memberItem?.name}
+                    jobTitle={memberItem?.jobTitle}
+                    image={memberItem?.image}
+                  />
+                </Grid>
+              ))}
         </Grid>
       </Container>
     </Box>

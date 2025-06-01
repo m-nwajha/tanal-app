@@ -7,7 +7,7 @@ export const END_POINTS = {
   COUNTER: `${API_URL}/counter`,
   CONTACT: `${API_URL}/contact`,
   CONTACT_INFO: `${API_URL}/contact-info`,
-  BOARD_DIRECTORS: `${API_URL}/boardDirectors`,
+  BOARD_DIRECTORS: `${API_URL}/board-directors`,
   BETWEEN_LINES: `${API_URL}/between-lines`,
   CLIENTS: `${API_URL}/clients`,
   WHY_TANAL: `${API_URL}/why-tanal`,

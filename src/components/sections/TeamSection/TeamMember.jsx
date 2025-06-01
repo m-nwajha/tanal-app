@@ -1,8 +1,9 @@
 import React from 'react';
 import { Box, Avatar, Typography, Stack, IconButton, useTheme } from '@mui/material';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
+import { UPLOAD_PATH } from '@/constants/UPLOAD_PATH';
 
-const TeamMember = ({ name, role, image }) => {
+const TeamMember = ({ name, jobTitle, image }) => {
   const theme = useTheme();
   return (
     <Box
@@ -22,7 +23,7 @@ const TeamMember = ({ name, role, image }) => {
         },
       }}>
       <Avatar
-        src={image}
+        src={`${UPLOAD_PATH}${image}`}
         alt={name}
         sx={{ width: '100%', height: 'auto', borderRadius: 0 }}
         variant='square'
@@ -56,7 +57,7 @@ const TeamMember = ({ name, role, image }) => {
             fontFamily={theme.typography.IBM}
             variant='body2'
             fontStyle='italic'>
-            {role}
+            {jobTitle}
           </Typography>
           <Stack
             direction='row'
