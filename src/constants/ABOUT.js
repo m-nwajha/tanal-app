@@ -73,3 +73,9 @@ export const  WHY_TANAL = {
     happy: <TagFacesRoundedIcon />,
   },
 }
+
+export const GOALS = {
+  title: 'أهداف تنال',
+  description:
+    'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
+};

@@ -5,6 +5,7 @@ import WhyTanal from './sections/WhyTanal';
 import Vision from './sections/Vision';
 import BoardDirectors from './sections/BoardDirectors';
 import Message from './sections/Message';
+import Goals from './sections/Goals';
 
 const AboutPage = () => {
   return (
@@ -18,6 +19,7 @@ const AboutPage = () => {
       <WhyTanal />
       <Vision />
       <Message />
+      <Goals />
       <BoardDirectors />
     </>
   );
