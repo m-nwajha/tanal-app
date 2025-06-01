@@ -1,32 +1,14 @@
-'use client';
-// Import React.
-import { useEffect } from 'react';
 
-// Import MUI Components.
 import { Container, Grid } from '@mui/material';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
-// Import Components.
 import CountersSectionHeader from './components/CountersSectionHeader';
 import CounterItem from './components/CounterItem';
 import CounterItemSkeleton from './components/CounterItemSkeleton';
-import { END_POINTS } from '@/constants/END_POINTS';
-import useAPI from '@/hooks/useAPI';
-
-// Import Style.
 import { CountersWrapperStyled } from './style';
-import { API_KEY } from '@/config/API';
 import { ICONS } from '@/constants/ICONS';
 import { skeletonArr } from '@/utils/skeletonArr';
 
-const SectionIconList = ({ getDataConstant, getDataAPI }) => {
-  // Use API.
-  const { data, loading, get } = useAPI(END_POINTS.WHY_TANAL, API_KEY);
-
-  // Use Effect.
-  useEffect(() => {
-    get();
-  }, []);
-
+const SectionIconList = ({ getDataConstant, getDataAPI, loading }) => {
   return (
     <CountersWrapperStyled id='counters'>
       <Container maxWidth='lg'>
@@ -39,7 +21,7 @@ const SectionIconList = ({ getDataConstant, getDataAPI }) => {
           justifyContent='center'
           alignItems='center'
           spacing={6}>
-          {loading || data.length === 0
+          {loading || getDataAPI.length === 0
             ? skeletonArr(4).map((_, index) => {
                 return (
                   <Grid
@@ -52,7 +34,7 @@ const SectionIconList = ({ getDataConstant, getDataAPI }) => {
                   </Grid>
                 );
               })
-            : data.map(counterItem => {
+            : getDataAPI.map(counterItem => {
                 return (
                   <Grid
                     mt={9}
