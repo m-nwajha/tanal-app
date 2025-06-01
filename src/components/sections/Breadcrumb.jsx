@@ -20,8 +20,8 @@ const Breadcrumb = ({ title, description, breadcrumbHistory }) => {
     <Box
       sx={{
         'position': 'relative',
-        'py': { xs: '13rem', md: '13rem' },
-        'pb': '7rem',
+        'pt': '12rem',
+        'pb': '5rem',
         'display': 'flex',
         'alignItems': 'center',
         '&::after': {

@@ -4,6 +4,7 @@ import BetweenLines from './sections/BetweenLines';
 import WhyTanal from './sections/WhyTanal';
 import Vision from './sections/Vision';
 import BoardDirectors from './sections/BoardDirectors';
+import Message from './sections/Message';
 
 const AboutPage = () => {
   return (
@@ -16,6 +17,7 @@ const AboutPage = () => {
       <BetweenLines />
       <WhyTanal />
       <Vision />
+      <Message />
       <BoardDirectors />
     </>
   );

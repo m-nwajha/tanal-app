@@ -1,12 +1,22 @@
 'use client';
-import { Box, Container, Grid, useTheme } from '@mui/material';
+import { Box, Container, Grid, Skeleton, Stack, useTheme } from '@mui/material';
 import bg from '@images/bg-pattern2.svg';
 import img from '@images/vision-img.webp';
 import Image from 'next/image';
 import SectionHeader from '@/components/ui/SectionHeader';
+import { useEffect } from 'react';
+import useAPI from '@/hooks/useAPI';
+import { END_POINTS } from '@/constants/END_POINTS';
+import { API_KEY } from '@/config/API';
 const Vision = () => {
-  const theme = useTheme();
+  // Use API.
+  const { data, loading, get } = useAPI(END_POINTS.VISION, API_KEY);
 
+  // Use Effect.
+  useEffect(() => {
+    get();
+  }, []);
+  const theme = useTheme();
   return (
     <Box
       component='section'
@@ -21,6 +31,12 @@ const Vision = () => {
           zIndex: '-2',
           backgroundColor: theme.palette.primary?.main,
           borderRadius: '90px 0 0 0px',
+        },
+        [theme.breakpoints.down('md')]: {
+          '&:after': {
+            width: '98%',
+            borderRadius: '50px 0 0 0px',
+          },
         },
         '&:before': {
           content: '""',
@@ -43,20 +59,35 @@ const Vision = () => {
             spacing={4}
             alignSelf='center'
             size={{ sm: 12, md: 7 }}>
-            <SectionHeader
-              type='dark'
-              title='رؤية تنال'
-              description='هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى'
-            />
-            <SectionHeader
-              type='dark'
-              title='رسالة تنال'
-              description='هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى'
-            />
+            {loading || data.length === 0 ? (
+              <Stack
+                display='flex'
+                flexDirection='column'
+                justifyContent='center'
+                alignItems='center'
+                spacing={4}>
+                <Skeleton
+                  variant='text'
+                  width='30%'
+                  height='6rem'
+                />
+                <Skeleton
+                  variant='rectangular'
+                  width='100%'
+                  height='6rem'
+                />
+              </Stack>
+            ) : (
+              <SectionHeader
+                type='dark'
+                title='رؤية تنال'
+                description={data[0]?.description}
+              />
+            )}
           </Grid>
           <Grid
             item
-            size={{ sm: 12, md: 5 }}>
+            size={{ xs: 12, sm: 12, md: 5 }}>
             <Box
               sx={{
                 'transform': 'perspective(1000px) rotateY(-5deg) rotateX(5deg)',

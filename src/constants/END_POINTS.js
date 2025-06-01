@@ -11,4 +11,6 @@ export const END_POINTS = {
   BETWEEN_LINES: `${API_URL}/between-lines`,
   CLIENTS: `${API_URL}/clients`,
   WHY_TANAL: `${API_URL}/why-tanal`,
+  VISION: `${API_URL}/vision`,
+  MESSAGE: `${API_URL}/message`
 };
