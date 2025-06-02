@@ -52,7 +52,13 @@ const Breadcrumb = ({ title, description, breadcrumbHistory }) => {
             {description}
           </D>
 
-          <Breadcrumbs aria-label='breadcrumb'>
+          <Breadcrumbs
+            sx={{
+              '& ol': {
+                rowGap: '1.5rem',
+              },
+            }}
+            aria-label='breadcrumb'>
             <Chip
               component='a'
               href='#'
