@@ -4,15 +4,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Import Constants
-import { PATHS } from '@/constants/PATHS';
-import { LOGO } from '@/constants/LOGO';
+import { LOGO } from '@/constants/mainLayout';
+import { PATHS } from '@/constants/paths';
 
 const Logo = ({ variant, height, unLiked, moreStyle }) => {
   const src =
     variant === 'light'
-      ? LOGO.TITLE_LIGHT
+      ? LOGO.LOGO_LIGHT
       : variant === 'dark'
-      ? LOGO.TITLE_DARK
+      ? LOGO.LOGO_DARK
       : '';
 
   return (
