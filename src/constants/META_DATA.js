@@ -9,5 +9,6 @@ export const PAGES_META_DATA = {
   about: `عن تنال | ${META_DATA.title}`,
   services: `خدماتنا | ${META_DATA.title}`,
   OurProjects: `مشاريع تنال | ${META_DATA.title}`,
+  signin: `تسجيل الدخول | ${META_DATA.title}`,
   dashboard: `لوحة تحكم الموقع | ${META_DATA.title}`,
 };

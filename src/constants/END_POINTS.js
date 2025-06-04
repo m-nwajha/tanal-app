@@ -13,5 +13,6 @@ export const END_POINTS = {
   WHY_TANAL: `${API_URL}/why-tanal`,
   VISION: `${API_URL}/vision`,
   MESSAGE: `${API_URL}/message`,
-  GOALS:`${API_URL}/goals`
+  GOALS: `${API_URL}/goals`,
+  AUTH_LOGIN: `${API_URL}/auth/login`,
 };
