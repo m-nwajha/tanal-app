@@ -48,10 +48,10 @@ const useAPI = (
     try {
       const res = await axios.post(url, body, { headers: config() });
       setData(prev => [...prev, res.data]);
-      return true; // ✅ عملية ناجحة
+      return res.data; // ✅ رجّع البيانات الفعلية
     } catch (err) {
       setError(err?.response?.data?.message || 'فشل الإرسال');
-      return false; // ❌ عملية فاشلة
+      return null; // ❌ ترجع null عند الخطأ
     } finally {
       setLoading(false);
     }
@@ -67,10 +67,10 @@ const useAPI = (
       setData(prev =>
         prev.map(item => (item.id === body.id ? res.data : item))
       );
-      return true;
+      return res.data;
     } catch (err) {
       setError(err?.response?.data?.message || 'فشل التحديث');
-      return false;
+      return null;
     } finally {
       setLoading(false);
     }
