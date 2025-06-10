@@ -98,6 +98,7 @@ const Sidebar = () => {
                           key={child.id}
                           onClick={() => router.push(child.href)}
                           sx={{
+                            'mt': 2,
                             'pr': 4,
                             ...(isChildActive ? activeStyle : {}),
                             '&:hover': activeStyle,
