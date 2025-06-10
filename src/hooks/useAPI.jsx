@@ -29,44 +29,65 @@ const useAPI = (
     }
   };
 
-  const del = async id => {
+  const del = async (id, refresh = false) => {
     setLoading(true);
     setError(null);
     try {
       await axios.delete(`${url}/${id}`, { headers: config() });
-      setData(prev => prev.filter(item => item.id !== id));
+      if (refresh) {
+        await get();
+      } else {
+        setData(prev => prev.filter(item => item._id !== id)); 
+      }
     } catch (err) {
       setError(err?.response?.data?.message || 'فشل الحذف');
     } finally {
       setLoading(false);
     }
   };
-
-  const post = async body => {
+  
+  const post = async (body, isFormData = false) => {
     setLoading(true);
     setError(null);
+
     try {
-      const res = await axios.post(url, body, { headers: config() });
+      const headers = config();
+
+      if (isFormData) {
+        delete headers['Content-Type']; 
+      }
+
+      const res = await axios.post(url, body, { headers });
       setData(prev => [...prev, res.data]);
-      return res.data; // ✅ رجّع البيانات الفعلية
+      return res.data;
     } catch (err) {
       setError(err?.response?.data?.message || 'فشل الإرسال');
-      return null; // ❌ ترجع null عند الخطأ
+      return null;
     } finally {
       setLoading(false);
     }
   };
+  
 
-  const put = async body => {
+  const put = async (body, isFormData = false) => {
     setLoading(true);
     setError(null);
+
     try {
+      const headers = config();
+
+      if (isFormData) {
+        delete headers['Content-Type'];
+      }
+
       const res = await axios.put(`${url}/${body.id}`, body, {
-        headers: config(),
+        headers,
       });
+
       setData(prev =>
-        prev.map(item => (item.id === body.id ? res.data : item))
+        prev.map(item => (item._id === body.id ? res.data : item))
       );
+
       return res.data;
     } catch (err) {
       setError(err?.response?.data?.message || 'فشل التحديث');
