@@ -28,18 +28,23 @@ import { useCookies } from 'react-cookie';
 import { PATHS } from '@/constants/PATHS';
 import { ROLES } from '@/constants/ROLES';
 import { useRouter } from 'next/navigation';
+import KeyboardReturnRoundedIcon from '@mui/icons-material/KeyboardReturnRounded';
 
 const DashboardHeader = ({ onMenuClick }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [notifAnchor, setNotifAnchor] = useState(null);
   const [userAnchor, setUserAnchor] = useState(null);
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const handleNotifOpen = e => setNotifAnchor(e.currentTarget);
   const handleNotifClose = () => setNotifAnchor(null);
-  const [showSnackbar, setShowSnackbar] = useState(false);
   const handleUserOpen = e => setUserAnchor(e.currentTarget);
   const handleUserClose = () => setUserAnchor(null);
-  const [cookies, setCookie] = useCookies(['token', 'user', 'role']);
+  const [cookies, setCookie, removeCookie] = useCookies([
+    'token',
+    'user',
+    'role',
+  ]);
   const router = useRouter();
   const handelLogout = () => {
     setCookie('token', null);
@@ -68,6 +73,7 @@ const DashboardHeader = ({ onMenuClick }) => {
           variant='h6'
           component='div'
           sx={{ color: theme.palette.primary.main }}>
+          <KeyboardReturnRoundedIcon sx={{ ml: 1, color: 'gray' }} />
           لوحة التحكم
         </Typography>
 
@@ -132,7 +138,7 @@ const DashboardHeader = ({ onMenuClick }) => {
                     mx: 1,
                     color: 'var(--color-blue-light)',
                   }}>
-                  {cookies.user}
+                  {cookies.user || 'اسم المستخدم'}
                 </Typography>
                 <MoreVertIcon />
               </>
