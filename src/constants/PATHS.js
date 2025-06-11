@@ -11,26 +11,34 @@ export const PATHS = {
     HOME: '/dashboard',
     SERVICES: {
       VIEW: '/view-services',
-      CREATE: '/create-services'
+      CREATE: '/create-service',
+      EDIT: '/edit-service',
     },
     PROJECTS: {
       VIEW: '/view-projects',
-      CREATE: '/create-projects'
+      CREATE: '/create-project',
+      EDIT: '/edit-project',
     },
     REVIEWS: {
       VIEW: '/view-reviews',
-      CREATE: '/create-reviews'
+      CREATE: '/create-review',
+      EDIT: '/edit-review',
+    },
+    COUNTERS: {
+      VIEW: '/view-counters',
+      CREATE: '/create-counter',
+      EDIT: '/edit-counter',
     },
     REQUESTS: '/view-requests',
     MASSAGES: '/view-massages',
     SETTING: {
       ABOUT: '/about-settings',
       PUBLIC: '/public-settings',
-      ADMIN: '/admin-settings'
-    }
+      ADMIN: '/admin-settings',
+    },
   },
   // Auth Paths.
-  AUTH:{
-    SIGNIN: '/app-signin'
-  }
+  AUTH: {
+    SIGNIN: '/app-signin',
+  },
 };
