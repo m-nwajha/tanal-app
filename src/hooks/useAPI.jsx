@@ -80,13 +80,13 @@ const useAPI = (
         delete headers['Content-Type'];
       }
 
-      const res = await axios.put(`${url}/${body.id}`, body, {
+      const res = await axios.put(url, body, {
         headers,
       });
 
-      setData(prev =>
-        prev.map(item => (item._id === body.id ? res.data : item))
-      );
+      // setData(prev =>
+      //   prev.map(item => (item._id === body.id ? res.data : item))
+      // );
 
       return res.data;
     } catch (err) {
