@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { redirect } from 'next/navigation';
 import { Box, Container, Typography } from '@mui/material';
 import useAPI from '@/hooks/useAPI';
 import { END_POINTS } from '@/constants/END_POINTS';
@@ -11,24 +11,32 @@ import ReusableForm from '@/components/sections/ReusableForm';
 import { CREATE_SERVICE } from '@/constants/createService';
 import { PATHS } from '@/constants/PATHS';
 import BreadcrumbDashboard from '@/components/sections/BreadcrumbDashboard';
+import SnackbarCreate from './components/Snackbar';
 
 const CreateServicesPage = () => {
-  const router = useRouter();
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+
   const { post, loading } = useAPI(END_POINTS.SERVICES, API_KEY);
 
-  const handleSubmit = async formData => {
-    const payload = new FormData();
-  
-    payload.append('title', formData.title);
-    payload.append('description', formData.description);
-  
-    if (formData.image && formData.image.length > 0) {
-      payload.append('image', formData.image[0]); 
+  const handleSubmit = async data => {
+    const formData = new FormData();
+
+    formData.append('title', data.title);
+    formData.append('description', data.description);
+    formData.append('image', data.image);
+
+    try {
+      const res = await post(formData, true);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setOpenSnackbar(true);
+      setTimeout(() => {
+        redirect([PATHS.DASHBOARD.SERVICES.VIEW]);
+      }, 1500);
     }
-  
-    const res = await post(payload, true); 
   };
-  
+
   return (
     <>
       <Container maxWidth='lg'>
@@ -49,6 +57,10 @@ const CreateServicesPage = () => {
           onSubmit={handleSubmit}
           isLoading={loading}
           buttonLabel='إضافة الخدمة'
+        />
+        <SnackbarCreate
+          open={openSnackbar}
+          onClose={() => setOpenSnackbar(false)}
         />
       </Container>
     </>
