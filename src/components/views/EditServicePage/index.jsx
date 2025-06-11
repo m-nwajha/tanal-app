@@ -1,22 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { redirect } from 'next/navigation';
-import { Box, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import useAPI from '@/hooks/useAPI';
 import { END_POINTS } from '@/constants/END_POINTS';
 import { API_KEY } from '@/config/API';
 import serviceFormSchema from '@/schemas/serviceFormSchema';
 import ReusableForm from '@/components/sections/ReusableForm';
-import { CREATE_SERVICE } from '@/constants/createService';
 import { PATHS } from '@/constants/PATHS';
 import BreadcrumbDashboard from '@/components/sections/BreadcrumbDashboard';
-import SnackbarCreate from './components/Snackbar';
-
-const CreateServicesPage = () => {
+import { EDIT_SERVICE } from '@/constants/editService';
+import SnackbarEdit from './components/Snackbar';
+const EditServicePage = ({ id }) => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
-  const { post, loading } = useAPI(END_POINTS.SERVICES, API_KEY);
+  const { data, put, get, loading } = useAPI(
+    `${END_POINTS.SERVICES}/${id}`,
+    API_KEY
+  );
 
   const handleSubmit = async data => {
     const formData = new FormData();
@@ -26,7 +28,7 @@ const CreateServicesPage = () => {
     formData.append('image', data.image);
 
     try {
-      const res = await post(formData, true);
+      const res = await put(formData, true);
     } catch (error) {
       console.error(error);
     } finally {
@@ -37,34 +39,38 @@ const CreateServicesPage = () => {
     }
   };
 
+  useEffect(() => {
+    get();
+  }, []);
+
   return (
     <>
       <Container maxWidth='lg'>
         <BreadcrumbDashboard
-          breadcrumbHistory={CREATE_SERVICE.breadcrumbHistory}
+          breadcrumbHistory={EDIT_SERVICE.breadcrumbHistory(data?.title)}
         />
         <Typography
           variant='h5'
           color='primary'
           sx={{ my: 3 }}>
-          {CREATE_SERVICE.title}
+          {EDIT_SERVICE.title(data?.title)}
         </Typography>
       </Container>
       <Container maxWidth='sm'>
         <ReusableForm
-          fields={CREATE_SERVICE.serviceFormFields}
+          fields={EDIT_SERVICE.serviceFormFields(data)}
           schema={serviceFormSchema}
           onSubmit={handleSubmit}
           isLoading={loading}
-          submitLabel='إضافة الخدمة'
+          submitLabel='حفظ التعديلات'
         />
-        <SnackbarCreate
+        <SnackbarEdit
           open={openSnackbar}
-          onClose={() => setOpenSnackbar(false)}
+           onClose={() => setOpenSnackbar(false)}
         />
       </Container>
     </>
   );
 };
 
-export default CreateServicesPage;
+export default EditServicePage;

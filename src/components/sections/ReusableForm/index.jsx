@@ -86,13 +86,16 @@ const ReusableForm = ({
                 <OutlinedInput
                   id={field.name}
                   type={field.type}
+                  defaultValue={field.value || ''}
                   label={field.label}
                   multiline={field.multiline || false}
                   rows={field.rows || 1}
                   {...register(field.name)}
                   startAdornment={
                     field.icon && (
-                      <InputAdornment sx={{ml: 2}} position='start'>
+                      <InputAdornment
+                        sx={{ ml: 2 }}
+                        position='start'>
                         <IconButton
                           edge='start'
                           tabIndex={-1}>
@@ -110,8 +113,7 @@ const ReusableForm = ({
           </Grid>
         ))}
 
-        <Grid
-          item>
+        <Grid item>
           <Button
             type='submit'
             variant='contained'
