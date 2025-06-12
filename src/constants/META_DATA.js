@@ -33,6 +33,11 @@ export const PAGES_META_DATA = {
   createReview: `إضافة تقييم جديد | ${META_DATA.title}`,
   editReview: `تعديل التقييم | ${META_DATA.title}`,
 
+  // Clients.
+  viewClients: `عرض  العملاء | ${META_DATA.title}`,
+  createClient: `إضافة عميل جديد | ${META_DATA.title}`,
+  editClient: `تعديل العميل | ${META_DATA.title}`,
+  
   // Counters.
   viewCounters: `عرض  العدادات | ${META_DATA.title}`,
   createCounter: `إضافة عداد جديد | ${META_DATA.title}`,

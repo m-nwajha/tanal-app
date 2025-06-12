@@ -24,6 +24,11 @@ export const PATHS = {
       CREATE: '/create-review',
       EDIT: '/edit-review',
     },
+    CLIENTS: {
+      VIEW: '/view-clients',
+      CREATE: '/create-client',
+      EDIT: '/edit-client',
+    },
     COUNTERS: {
       VIEW: '/view-counters',
       CREATE: '/create-counter',
