@@ -37,7 +37,7 @@ const EditReviewPage = ({id}) => {
     } finally {
       setOpenSnackbar(true);
       setTimeout(() => {
-        redirect([PATHS.DASHBOARD.SERVICES.VIEW]);
+        redirect([PATHS.DASHBOARD.REVIEWS.VIEW]);
       }, 1500);
     }
   };
