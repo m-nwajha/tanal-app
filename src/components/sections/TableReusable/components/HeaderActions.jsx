@@ -15,17 +15,19 @@ const HeaderActions = ({ title, createBtn }) => (
         {title}
       </Typography>
     </Grid>
-    <Grid
-      item
-      sx={{ alignSelf: 'center' }}>
-      <Button
-        component={Link}
-        sx={{borderRadius: '12px'}}
-        href={createBtn?.link}
-        variant='contained'>
-        {createBtn?.label}
-      </Button>
-    </Grid>
+    {createBtn && (
+      <Grid
+        item
+        sx={{ alignSelf: 'center' }}>
+        <Button
+          component={Link}
+          sx={{ borderRadius: '12px' }}
+          href={createBtn?.link}
+          variant='contained'>
+          {createBtn?.label}
+        </Button>
+      </Grid>
+    )}
   </Grid>
 );
 

@@ -35,4 +35,6 @@ export const PAGES_META_DATA = {
   // Counters.
   viewCounters: `عرض  العدادات | ${META_DATA.title}`,
   createCounter: `إضافة عداد جديد | ${META_DATA.title}`,
+
+  viewMassages: `مشاهدة الرسائل | ${META_DATA.title}`,
 };

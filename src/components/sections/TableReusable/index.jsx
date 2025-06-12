@@ -23,7 +23,7 @@ const ReusableTable = ({ constants, data, onDelete, isLoading }) => {
   const [showSnackbar, setShowSnackbar] = useState(false);
 
   const handleDelete = async (id, title) => {
-    const confirmDelete = window.confirm(`هل أنت متأكد من حذف (${title})؟`);
+    const confirmDelete = window.confirm(`هل أنت متأكد من حذف ${title || 'العنصر' }؟`);
     if (!confirmDelete) return;
     const result = await onDelete?.(id);
     if (result === false) setShowSnackbar(true);
