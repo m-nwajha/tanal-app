@@ -31,6 +31,7 @@ export const PAGES_META_DATA = {
   // Reviews.
   viewReviews: `عرض  التقييمات | ${META_DATA.title}`,
   createReview: `إضافة تقييم جديد | ${META_DATA.title}`,
+  editReview: `تعديل التقييم | ${META_DATA.title}`,
 
   // Counters.
   viewCounters: `عرض  العدادات | ${META_DATA.title}`,
