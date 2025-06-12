@@ -21,10 +21,6 @@ export const viewClients = {
       label: 'الخيارات',
       actionsBtns: [
         {
-          label: 'تعديل',
-          hrefBase: PATHS.DASHBOARD.CLIENTS.EDIT,
-        },
-        {
           label: 'حذف',
           href: '',
         },
