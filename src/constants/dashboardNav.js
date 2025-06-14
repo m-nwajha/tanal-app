@@ -15,6 +15,11 @@ import ShutterSpeedRoundedIcon from '@mui/icons-material/ShutterSpeedRounded';
 import AddAlarmRoundedIcon from '@mui/icons-material/AddAlarmRounded';
 import AssignmentIndRoundedIcon from '@mui/icons-material/AssignmentIndRounded';
 import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
+import QuestionMarkRoundedIcon from "@mui/icons-material/QuestionMarkRounded"
+import CenterFocusStrongRoundedIcon from '@mui/icons-material/CenterFocusStrongRounded';
+import CollectionsBookmarkRoundedIcon from '@mui/icons-material/CollectionsBookmarkRounded';
+import MovingRoundedIcon from '@mui/icons-material/MovingRounded';
+import SupervisorAccountRoundedIcon from '@mui/icons-material/SupervisorAccountRounded';
 import { PATHS } from './PATHS';
 
 export const DASHBOARD_NAV = [
@@ -136,23 +141,60 @@ export const DASHBOARD_NAV = [
   },
   {
     id: 9,
-    label: 'الإعدادات',
-    icon: <SettingsIcon />,
+    label: 'من نحن',
+    icon: <InfoIcon />,
     children: [
       {
         id: 91,
-        label: 'من نحن',
-        href: PATHS.DASHBOARD.SETTING.ABOUT,
+        label: 'التعريف',
+        href: PATHS.DASHBOARD.ABOUT.BETWEEN_LINES,
         icon: <InfoIcon />,
       },
       {
         id: 92,
+        label: 'لماذا نحن؟',
+        href: PATHS.DASHBOARD.ABOUT.WHY_TANAL,
+        icon: <QuestionMarkRoundedIcon />,
+      },
+      {
+        id: 92,
+        label: 'الرؤية',
+        href: PATHS.DASHBOARD.ABOUT.VISION,
+        icon: <CenterFocusStrongRoundedIcon />,
+      },
+      {
+        id: 93,
+        label: 'الرسالة',
+        href: PATHS.DASHBOARD.ABOUT.MESSAGE,
+        icon: <CollectionsBookmarkRoundedIcon />,
+      },
+      {
+        id: 93,
+        label: 'الأهداف',
+        href: PATHS.DASHBOARD.ABOUT.GOALS,
+        icon: <MovingRoundedIcon />,
+      },
+      {
+        id: 93,
+        label: 'مجلس الإدارة',
+        href: PATHS.DASHBOARD.ABOUT.BOARD_DIRECTORS,
+        icon: <SupervisorAccountRoundedIcon />,
+      },
+    ],
+  },
+  {
+    id: 10,
+    label: 'الإعدادات',
+    icon: <SettingsIcon />,
+    children: [
+      {
+        id: 102,
         label: 'إعدادات عامة',
         href: PATHS.DASHBOARD.SETTING.PUBLIC,
         icon: <PublicIcon />,
       },
       {
-        id: 93,
+        id: 103,
         label: 'إعدادات المدير',
         href: PATHS.DASHBOARD.SETTING.ADMIN,
         icon: <AdminPanelSettingsIcon />,

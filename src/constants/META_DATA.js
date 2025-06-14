@@ -37,10 +37,13 @@ export const PAGES_META_DATA = {
   viewClients: `عرض  العملاء | ${META_DATA.title}`,
   createClient: `إضافة عميل جديد | ${META_DATA.title}`,
   editClient: `تعديل العميل | ${META_DATA.title}`,
-  
+
   // Counters.
   viewCounters: `عرض  العدادات | ${META_DATA.title}`,
   createCounter: `إضافة عداد جديد | ${META_DATA.title}`,
+
+  // about.
+  betweenLines: `تنال بين السطور | ${META_DATA.title}`,
 
   viewMassages: `مشاهدة الرسائل | ${META_DATA.title}`,
 };

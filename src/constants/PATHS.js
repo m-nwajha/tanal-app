@@ -36,6 +36,14 @@ export const PATHS = {
     },
     REQUESTS: '/view-requests',
     MASSAGES: '/view-massages',
+    ABOUT: {
+      BETWEEN_LINES: '/between-lines',
+      WHY_TANAL: '/why-tanal',
+      VISION: '/vision',
+      MESSAGE: '/message',
+      GOALS: '/goals',
+      BOARD_DIRECTORS: '/board-directors',
+    },
     SETTING: {
       ABOUT: '/about-settings',
       PUBLIC: '/public-settings',
