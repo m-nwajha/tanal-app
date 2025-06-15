@@ -10,7 +10,7 @@ import { viewClients } from '@/constants/viewClients';
 
 const ViewClientsPage = () => {
   // Use API.
-  const { data, get, del, loading } = useAPI(END_POINTS.REVIEW, API_KEY);
+  const { data, get, del, loading } = useAPI(END_POINTS.CLIENTS, API_KEY);
   // useEffect.
   useEffect(() => {
     get();
