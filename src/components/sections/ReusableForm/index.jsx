@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FormControl,
   InputLabel,
@@ -11,7 +11,9 @@ import {
   Button,
   Grid,
   Box,
-  TextField,
+  Select,
+  MenuItem,
+  useTheme,
 } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -24,10 +26,12 @@ const ReusableForm = ({
   isLoading = false,
   submitLabel = 'حفظ',
 }) => {
+  const theme = useTheme()
   const {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors },
   } = useForm({
     defaultValues,
@@ -77,10 +81,41 @@ const ReusableForm = ({
                   <FormHelperText>{errors.image.message}</FormHelperText>
                 )}
               </FormControl>
+            ) : field.type === 'select' ? (
+              <FormControl
+                fullWidth
+                error={Boolean(errors[field.name])}>
+                <InputLabel id={`${field.name}-label`}>
+                  {field.label}
+                </InputLabel>
+                <Select
+                  labelId={`${field.name}-label`}
+                  id={field.name}
+                  value={watch(field.name) || ''}
+                  label={field.label}
+                  onChange={e => setValue(field.name, e.target.value)}>
+                  {field.options.map(([key, item], index) => (
+                    <MenuItem
+                      key={index}
+                      value={key}>
+                      <Box
+                        display='flex'
+                        alignItems='center'
+                        color={theme.palette.secondary.main}
+                        gap={1}>
+                        {item}
+                        {key}
+                      </Box>
+                    </MenuItem>
+                  ))}
+                </Select>
+                {errors[field.name] && (
+                  <FormHelperText>{errors[field.name].message}</FormHelperText>
+                )}
+              </FormControl>
             ) : (
               <FormControl
                 fullWidth
-                variant='outlined'
                 error={Boolean(errors[field.name])}>
                 <InputLabel htmlFor={field.name}>{field.label}</InputLabel>
                 <OutlinedInput
