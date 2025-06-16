@@ -16,7 +16,7 @@ import AddAlarmRoundedIcon from '@mui/icons-material/AddAlarmRounded';
 import AssignmentIndRoundedIcon from '@mui/icons-material/AssignmentIndRounded';
 import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
 import QuestionMarkRoundedIcon from "@mui/icons-material/QuestionMarkRounded"
-import CenterFocusStrongRoundedIcon from '@mui/icons-material/CenterFocusStrongRounded';
+import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import CollectionsBookmarkRoundedIcon from '@mui/icons-material/CollectionsBookmarkRounded';
 import MovingRoundedIcon from '@mui/icons-material/MovingRounded';
 import SupervisorAccountRoundedIcon from '@mui/icons-material/SupervisorAccountRounded';
@@ -160,7 +160,7 @@ export const DASHBOARD_NAV = [
         id: 92,
         label: 'الرؤية',
         href: PATHS.DASHBOARD.ABOUT.VISION,
-        icon: <CenterFocusStrongRoundedIcon />,
+        icon: <VisibilityRoundedIcon />,
       },
       {
         id: 93,

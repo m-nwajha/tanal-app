@@ -8,17 +8,17 @@ import { API_KEY } from '@/config/API';
 import ReusableForm from '@/components/sections/ReusableForm';
 import BreadcrumbDashboard from '@/components/sections/BreadcrumbDashboard';
 import SnackbarEdit from './components/Snackbar';
-import betweenLinesFormSchema from '@/schemas/betweenLinesFormSchema';
-import { betweenLines } from '@/constants/betweenLines';
+import { vision } from '@/constants/vision';
+import visionFormSchema from '@/schemas/visionFormSchema';
 
-const BetweenLinesPage = () => {
+const VisionPage = () => {
   // object id in end points.
   const id = 52542;
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const { data, put, get, loading } = useAPI(
-    `${END_POINTS.BETWEEN_LINES}/${id}`,
+    `${END_POINTS.VISION}/${id}`,
     API_KEY
   );
 
@@ -26,6 +26,7 @@ const BetweenLinesPage = () => {
     const formData = new FormData();
 
     formData.append('description', data.description);
+    formData.append('image', data.image);
 
     try {
       const res = await put(formData, true);
@@ -43,20 +44,18 @@ const BetweenLinesPage = () => {
   return (
     <>
       <Container maxWidth='lg'>
-        <BreadcrumbDashboard
-          breadcrumbHistory={betweenLines.breadcrumbHistory}
-        />
+        <BreadcrumbDashboard breadcrumbHistory={vision.breadcrumbHistory} />
         <Typography
           variant='h5'
           color='primary'
           sx={{ my: 3 }}>
-          {betweenLines.title}
+          {vision.title}
         </Typography>
       </Container>
       <Container maxWidth='sm'>
         <ReusableForm
-          fields={betweenLines.formFields(data)}
-          schema={betweenLinesFormSchema}
+          fields={vision.formFields(data)}
+          schema={visionFormSchema}
           onSubmit={handleSubmit}
           isLoading={loading}
           submitLabel='حفظ التعديلات'
@@ -69,5 +68,4 @@ const BetweenLinesPage = () => {
     </>
   );
 };
-
-export default BetweenLinesPage;
+export default VisionPage
