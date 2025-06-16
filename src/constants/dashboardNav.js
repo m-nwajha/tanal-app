@@ -153,7 +153,7 @@ export const DASHBOARD_NAV = [
       {
         id: 92,
         label: 'لماذا نحن؟',
-        href: PATHS.DASHBOARD.ABOUT.WHY_TANAL,
+        href: PATHS.DASHBOARD.ABOUT.WHY_TANAL.VIEW,
         icon: <QuestionMarkRoundedIcon />,
       },
       {

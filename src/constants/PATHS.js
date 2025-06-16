@@ -38,7 +38,10 @@ export const PATHS = {
     MASSAGES: '/view-massages',
     ABOUT: {
       BETWEEN_LINES: '/between-lines',
-      WHY_TANAL: '/why-tanal',
+      WHY_TANAL: {
+        VIEW: '/why-tanal',
+        CREATE: '/create-why-tanal',
+      },
       VISION: '/vision',
       MESSAGE: '/message',
       GOALS: '/goals',
