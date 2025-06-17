@@ -5,19 +5,19 @@ import { Container, Typography } from '@mui/material';
 import useAPI from '@/hooks/useAPI';
 import { END_POINTS } from '@/constants/END_POINTS';
 import { API_KEY } from '@/config/API';
-import ReusableForm from '@/components/sections/ReusableForm';
 import BreadcrumbDashboard from '@/components/sections/BreadcrumbDashboard';
 import SnackbarEdit from './components/Snackbar';
 import betweenLinesFormSchema from '@/schemas/betweenLinesFormSchema';
 import { betweenLines } from '@/constants/betweenLines';
+import Form from './components/Form';
 
 const BetweenLinesPage = () => {
   // object id in end points.
-  const id = 52542;
+  const id = '683460f85eac98246d3e163a';
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
-  const { data, put, get, loading } = useAPI(
+  const { put, loading } = useAPI(
     `${END_POINTS.BETWEEN_LINES}/${id}`,
     API_KEY
   );
@@ -36,10 +36,6 @@ const BetweenLinesPage = () => {
     }
   };
 
-  useEffect(() => {
-    get();
-  }, []);
-
   return (
     <>
       <Container maxWidth='lg'>
@@ -54,12 +50,10 @@ const BetweenLinesPage = () => {
         </Typography>
       </Container>
       <Container maxWidth='sm'>
-        <ReusableForm
-          fields={betweenLines.formFields(data)}
+        <Form
           schema={betweenLinesFormSchema}
           onSubmit={handleSubmit}
           isLoading={loading}
-          submitLabel='حفظ التعديلات'
         />
         <SnackbarEdit
           open={openSnackbar}

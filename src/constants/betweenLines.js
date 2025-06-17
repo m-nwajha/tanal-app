@@ -6,11 +6,11 @@ export const betweenLines = {
     {
       name: 'description',
       label: 'التعريف',
-      value: data['description'] || '',
+      value: data?.description || '',
       type: 'text',
       icon: <DescriptionIcon />,
       multiline: true,
-      rows: 4,
+      rows: 7,
     }
   ],
 };
