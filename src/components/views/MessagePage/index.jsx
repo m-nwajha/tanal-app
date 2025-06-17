@@ -5,19 +5,19 @@ import { Container, Typography } from '@mui/material';
 import useAPI from '@/hooks/useAPI';
 import { END_POINTS } from '@/constants/END_POINTS';
 import { API_KEY } from '@/config/API';
-import ReusableForm from '@/components/sections/ReusableForm';
 import BreadcrumbDashboard from '@/components/sections/BreadcrumbDashboard';
 import SnackbarEdit from './components/Snackbar';
 import { message } from '@/constants/message';
 import messageFormSchema from '@/schemas/messageFormSchema';
+import Form from './components/Form';
 
 const MessagePage = () => {
   // object id in end points.
-  const id = 52542;
+  const id = '68330e6e19d2bffaaeadd39e';
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
-  const { data, put, get, loading } = useAPI(
+  const { put, loading } = useAPI(
     `${END_POINTS.MESSAGE}/${id}`,
     API_KEY
   );
@@ -37,10 +37,6 @@ const MessagePage = () => {
     }
   };
 
-  useEffect(() => {
-    get();
-  }, []);
-
   return (
     <>
       <Container maxWidth='lg'>
@@ -53,12 +49,10 @@ const MessagePage = () => {
         </Typography>
       </Container>
       <Container maxWidth='sm'>
-        <ReusableForm
-          fields={message.formFields(data)}
+        <Form
           schema={messageFormSchema}
           onSubmit={handleSubmit}
           isLoading={loading}
-          submitLabel='حفظ التعديلات'
         />
         <SnackbarEdit
           open={openSnackbar}

@@ -6,7 +6,7 @@ export const message = {
     {
       name: 'description',
       label: 'الرسالة',
-      value: data['description'] || '',
+      value: data?.description || '',
       type: 'text',
       icon: <DescriptionIcon />,
       multiline: true,
