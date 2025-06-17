@@ -25,9 +25,8 @@ const CreateWhyTanalPage = () => {
     formData.append('icon', data.icon);
     formData.append('description', data.description);
 
-
     try {
-      const res = await post(formData, true);
+      const res = await post(formData);
     } catch (error) {
       console.error(error);
     } finally {
