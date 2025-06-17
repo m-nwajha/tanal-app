@@ -10,14 +10,15 @@ import BreadcrumbDashboard from '@/components/sections/BreadcrumbDashboard';
 import SnackbarEdit from './components/Snackbar';
 import { vision } from '@/constants/vision';
 import visionFormSchema from '@/schemas/visionFormSchema';
+import Form from './components/Form';
 
 const VisionPage = () => {
   // object id in end points.
-  const id = 52542;
+  const id = '68330b98e1c26a364b34832a';
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
-  const { data, put, get, loading } = useAPI(
+  const { put, loading } = useAPI(
     `${END_POINTS.VISION}/${id}`,
     API_KEY
   );
@@ -37,10 +38,6 @@ const VisionPage = () => {
     }
   };
 
-  useEffect(() => {
-    get();
-  }, []);
-
   return (
     <>
       <Container maxWidth='lg'>
@@ -53,12 +50,10 @@ const VisionPage = () => {
         </Typography>
       </Container>
       <Container maxWidth='sm'>
-        <ReusableForm
-          fields={vision.formFields(data)}
+        <Form
           schema={visionFormSchema}
           onSubmit={handleSubmit}
           isLoading={loading}
-          submitLabel='حفظ التعديلات'
         />
         <SnackbarEdit
           open={openSnackbar}
