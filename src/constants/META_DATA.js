@@ -48,6 +48,6 @@ export const PAGES_META_DATA = {
   vision: `الرؤية | ${META_DATA.title}`,
   message: `الرسالة | ${META_DATA.title}`,
   goals: `الأهداف | ${META_DATA.title}`,
-
+  boardDirectors: `مجلس الإدارة | ${META_DATA.title}`,
   viewMassages: `مشاهدة الرسائل | ${META_DATA.title}`,
 };

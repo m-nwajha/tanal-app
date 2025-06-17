@@ -177,7 +177,7 @@ export const DASHBOARD_NAV = [
       {
         id: 93,
         label: 'مجلس الإدارة',
-        href: PATHS.DASHBOARD.ABOUT.BOARD_DIRECTORS,
+        href: PATHS.DASHBOARD.ABOUT.BOARD_DIRECTORS.VIEW,
         icon: <SupervisorAccountRoundedIcon />,
       },
     ],

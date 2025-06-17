@@ -48,7 +48,10 @@ export const PATHS = {
         VIEW: '/goals',
         CREATE: '/create-goal',
       },
-      BOARD_DIRECTORS: '/board-directors',
+      BOARD_DIRECTORS: {
+        VIEW: '/board-directors',
+        CREATE: '/create-board-director',
+      },
     },
     SETTING: {
       ABOUT: '/about-settings',
