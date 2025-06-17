@@ -45,9 +45,9 @@ export const PAGES_META_DATA = {
   // about.
   betweenLines: `تنال بين السطور | ${META_DATA.title}`,
   WhyTanal: `لماذا نحن؟ | ${META_DATA.title}`,
-  WhyTanal: `لماذا نحن؟ | ${META_DATA.title}`,
   vision: `الرؤية | ${META_DATA.title}`,
   message: `الرسالة | ${META_DATA.title}`,
+  goals: `الأهداف | ${META_DATA.title}`,
 
   viewMassages: `مشاهدة الرسائل | ${META_DATA.title}`,
 };

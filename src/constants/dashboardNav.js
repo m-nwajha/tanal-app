@@ -171,7 +171,7 @@ export const DASHBOARD_NAV = [
       {
         id: 93,
         label: 'الأهداف',
-        href: PATHS.DASHBOARD.ABOUT.GOALS,
+        href: PATHS.DASHBOARD.ABOUT.GOALS.VIEW,
         icon: <MovingRoundedIcon />,
       },
       {
