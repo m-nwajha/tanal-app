@@ -6,7 +6,7 @@ export const vision = {
     {
       name: 'description',
       label: 'الرؤية',
-      value: data['description'] || '',
+      value: data?.description || '',
       type: 'text',
       icon: <DescriptionIcon />,
       multiline: true,
