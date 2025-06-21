@@ -6,6 +6,8 @@ export const PATHS = {
   PROJECTS: '/our-projects',
   REQUEST: '/request',
   CONTACT: '/contact-us',
+  privacyPolicy: '/privacy-policy',
+  terms: '/terms',
   // Dashboard Paths.
   DASHBOARD: {
     HOME: '/dashboard',
@@ -54,7 +56,6 @@ export const PATHS = {
       },
     },
     SETTING: {
-      ABOUT: '/about-settings',
       PUBLIC: '/public-settings',
       ADMIN: '/admin-settings',
     },

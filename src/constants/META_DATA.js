@@ -11,6 +11,8 @@ export const PAGES_META_DATA = {
   services: `خدماتنا | ${META_DATA.title}`,
   OurProjects: `مشاريع تنال | ${META_DATA.title}`,
   OurProjects: title => `${title}| ${META_DATA.title}`,
+  terms: `الأحكام والشروط | ${META_DATA.title}`,
+  privacyPolicy: `سياسة الخصوصية | ${META_DATA.title}`,
 
   // auth meta data.
   signin: `تسجيل الدخول | ${META_DATA.title}`,
@@ -49,5 +51,9 @@ export const PAGES_META_DATA = {
   message: `الرسالة | ${META_DATA.title}`,
   goals: `الأهداف | ${META_DATA.title}`,
   boardDirectors: `مجلس الإدارة | ${META_DATA.title}`,
+
   viewMassages: `مشاهدة الرسائل | ${META_DATA.title}`,
+  viewRequests: `مشاهدة الطلبات | ${META_DATA.title}`,
+  publicSettings: `الإعدادات العامة | ${META_DATA.title}`,
+  adminSettings: `إعدادات المدير | ${META_DATA.title}`,
 };

@@ -24,12 +24,12 @@ export const FOOTER = {
       {
         id: 3,
         label: 'سياسة الخصوصية',
-        href: '#'
+        href: PATHS.privacyPolicy
       },
       {
         id: 4,
         label: 'الأحكام والشروط',
-        href: '#'
+        href: PATHS.terms
       }
     ]
   },
