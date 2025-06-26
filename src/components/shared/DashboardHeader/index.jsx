@@ -116,12 +116,15 @@ const DashboardHeader = ({ onMenuClick }) => {
             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
             sx={{ direction: 'rtl' }}>
             <MenuItem
-              onClick={handleUserClose}
+              onClick={() => {
+                handleUserClose;
+                router.push(PATHS.DASHBOARD.SETTING.ADMIN);
+              }}
               sx={{ color: theme.palette.quinary.main }}>
               <ListItemIcon sx={{ color: theme.palette.tertiary.main }}>
                 <Settings fontSize='small' />
               </ListItemIcon>
-              الإعدادات
+              إعدادات حسابي
             </MenuItem>
             <Divider />
             <MenuItem
