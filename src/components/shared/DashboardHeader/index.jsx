@@ -7,7 +7,6 @@ import {
   Typography,
   useMediaQuery,
   Box,
-  Badge,
   Menu,
   MenuItem,
   Avatar,
@@ -18,26 +17,22 @@ import {
   Alert,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Logout from '@mui/icons-material/Logout';
 import Settings from '@mui/icons-material/Settings';
-import Person from '@mui/icons-material/Person';
-import MarkChatUnreadRoundedIcon from '@mui/icons-material/MarkChatUnreadRounded';
 import { useCookies } from 'react-cookie';
 import { PATHS } from '@/constants/PATHS';
 import { ROLES } from '@/constants/ROLES';
 import { useRouter } from 'next/navigation';
 import KeyboardReturnRoundedIcon from '@mui/icons-material/KeyboardReturnRounded';
+import NotificationsRequests from './components/NotificationsRequests';
+import NotificationsMessages from './components/NotificationsMessages';
 
 const DashboardHeader = ({ onMenuClick }) => {
-  const [notifAnchor, setNotifAnchor] = useState(null);
   const [userAnchor, setUserAnchor] = useState(null);
   const [showSnackbar, setShowSnackbar] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const handleNotifOpen = e => setNotifAnchor(e.currentTarget);
-  const handleNotifClose = () => setNotifAnchor(null);
   const handleUserOpen = e => setUserAnchor(e.currentTarget);
   const handleUserClose = () => setUserAnchor(null);
   const [cookies, setCookie, removeCookie] = useCookies([
@@ -78,56 +73,19 @@ const DashboardHeader = ({ onMenuClick }) => {
         </Typography>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          {/* الإشعارات */}
-          <IconButton onClick={handleNotifOpen}>
-            <Badge
-              badgeContent={9}
-              color='error'>
-              <NotificationsIcon color='primary' />
-            </Badge>
-          </IconButton>
-          <Menu
-            anchorEl={notifAnchor}
-            open={Boolean(notifAnchor)}
-            onClose={handleNotifClose}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-            sx={{ direction: 'rtl', borderRadius: '50px' }}>
-            <MenuItem
-              disabled
-              sx={{
-                fontWeight: 'bold',
-                color: theme.palette.primary.main,
-              }}>
-              <Person sx={{ ml: 1 }} /> الإشعارات
-            </MenuItem>
-            <Divider />
-            {[1, 2, 3, 4].map(n => (
-              <MenuItem
-                key={n}
-                onClick={handleNotifClose}>
-                <ListItemIcon>
-                  <MarkChatUnreadRoundedIcon />
-                </ListItemIcon>
-                <Box>
-                  <Typography sx={{ fontSize: '0.9rem' }}>
-                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة
-                  </Typography>
-                  <Typography sx={{ fontSize: '0.7rem', opacity: 0.6 }}>
-                    قبل 30 دقيقة
-                  </Typography>
-                </Box>
-              </MenuItem>
-            ))}
-          </Menu>
+          {/* Notifications Requests */}
+          <NotificationsRequests />
 
-          {/* المستخدم */}
+          {/* Notifications Messages */}
+          <NotificationsMessages />
+
+          {/* User Avatar */}
           <IconButton
             onClick={handleUserOpen}
             sx={{ p: 0, backgroundColor: '#f2f7f9', borderRadius: '6px' }}>
             <Avatar
               alt='User'
-              src='https://i.pravatar.cc/150?img=3'
+              src='https://avatar.iran.liara.run/public/5'
               sx={{ width: 37, height: 37, ml: 1 }}
             />
             {!isMobile && (
@@ -145,27 +103,31 @@ const DashboardHeader = ({ onMenuClick }) => {
             )}
           </IconButton>
           <Menu
+            PaperProps={{
+              sx: {
+                borderRadius: '15px',
+                backgroundColor: theme.palette.primary.main,
+              },
+            }}
             anchorEl={userAnchor}
             open={Boolean(userAnchor)}
             onClose={handleUserClose}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
             sx={{ direction: 'rtl' }}>
-            <MenuItem onClick={handleUserClose}>
-              <ListItemIcon>
-                <Person fontSize='small' />
-              </ListItemIcon>
-              الملف الشخصي
-            </MenuItem>
-            <MenuItem onClick={handleUserClose}>
-              <ListItemIcon>
+            <MenuItem
+              onClick={handleUserClose}
+              sx={{ color: theme.palette.quinary.main }}>
+              <ListItemIcon sx={{ color: theme.palette.tertiary.main }}>
                 <Settings fontSize='small' />
               </ListItemIcon>
               الإعدادات
             </MenuItem>
             <Divider />
-            <MenuItem onClick={handelLogout}>
-              <ListItemIcon>
+            <MenuItem
+              onClick={handelLogout}
+              sx={{ color: theme.palette.quinary.main }}>
+              <ListItemIcon sx={{ color: theme.palette.tertiary.main }}>
                 <Logout fontSize='small' />
               </ListItemIcon>
               تسجيل الخروج
