@@ -36,6 +36,8 @@ const ReusableTable = ({ constants, data, onDelete, isLoading }) => {
         sx={{ mt: 4, borderRadius: '20px' }}>
         <HeaderActions
           title={title}
+          data={data}
+          tableHeader={tableHeader}
           createBtn={createBtn}
         />
 

@@ -4,6 +4,7 @@ import { UPLOAD_PATH } from '@/constants/UPLOAD_PATH';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import { ICONS } from '@/constants/ICONS';
+
 const TableRowContent = ({ row, tableHeader, handleDelete }) => {
   const theme = useTheme();
   return (
@@ -22,6 +23,7 @@ const TableRowContent = ({ row, tableHeader, handleDelete }) => {
             </TableCell>
           );
         }
+
         if (column.id === 'icon') {
           return (
             <TableCell
@@ -32,6 +34,37 @@ const TableRowContent = ({ row, tableHeader, handleDelete }) => {
                 color: theme.palette.secondary.main,
               }}>
               {ICONS[row.icon]}
+            </TableCell>
+          );
+        }
+
+        if (column.id === 'resumeFile') {
+          // عرض رابط تحميل السيرة الذاتية إذا موجودة
+          return (
+            <TableCell
+              key={colIndex}
+              sx={{ textAlign: 'center' }}>
+              {row.resumeFile ? (
+                <Button
+                  href={`${UPLOAD_PATH}${row.resumeFile}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  variant='contained'
+                  color='success'
+                  size='small'
+                  download
+                  sx={{
+                    'mx': 0.5,
+                    'borderRadius': '10px',
+                    '& > span': {
+                      mr: 0,
+                    },
+                  }}>
+                  التحميل
+                </Button>
+              ) : (
+                '-' // عرض شرطة إذا لم تتوفر السيرة الذاتية
+              )}
             </TableCell>
           );
         }
@@ -91,7 +124,7 @@ const TableRowContent = ({ row, tableHeader, handleDelete }) => {
           <TableCell
             key={colIndex}
             sx={{ textAlign: 'center' }}>
-            {row[column.id]}
+            {row[column.id] || '-'}
           </TableCell>
         );
       })}
