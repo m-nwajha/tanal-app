@@ -187,12 +187,12 @@ export const DASHBOARD_NAV = [
     label: 'الإعدادات',
     icon: <SettingsIcon />,
     children: [
-      {
-        id: 102,
-        label: 'إعدادات عامة',
-        href: PATHS.DASHBOARD.SETTING.PUBLIC,
-        icon: <PublicIcon />,
-      },
+      // {
+      //   id: 102,
+      //   label: 'إعدادات عامة',
+      //   href: PATHS.DASHBOARD.SETTING.PUBLIC,
+      //   icon: <PublicIcon />,
+      // },
       {
         id: 103,
         label: 'إعدادات المدير',
