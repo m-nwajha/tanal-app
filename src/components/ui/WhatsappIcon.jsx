@@ -2,9 +2,18 @@
 
 import { useEffect, useState } from 'react';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import useAPI from '@/hooks/useAPI';
+import { END_POINTS } from '@/constants/END_POINTS';
+import { API_KEY } from '@/config/API';
 const WhatsappIcon = () => {
   const [show, setShow] = useState(false);
+  // Use API.
+  const { data, get } = useAPI(END_POINTS.CONTACT_INFO, API_KEY);
 
+  // Use Effect.
+  useEffect(() => {
+    get();
+  }, []);
   useEffect(() => {
     // delay showing the button for animation effect
     const timer = setTimeout(() => setShow(true), 500);
@@ -13,7 +22,7 @@ const WhatsappIcon = () => {
 
   return (
     <a
-      href='https://wa.me/9665XXXXXXX'
+      href={`https://wa.me/${data[0]?.whatsApp}`}
       target='_blank'
       rel='noopener noreferrer'
       style={{
