@@ -55,6 +55,7 @@ const FormLogin = () => {
     const success = await post(data);
     if (success && success.token) {
       setCookie('token', success.token);
+      setCookie('id', success._id);
       setCookie('user', JSON.stringify(success.user));
       setCookie('role', ROLES.ADMIN || success.role);
       setShowSnackbar(true);

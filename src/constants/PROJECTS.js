@@ -1,7 +1,7 @@
 export const PROJECTS = {
   title: 'مشاريع تنال',
   description:
-    'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
+    'مشاريع تنال ترتكز على الابتكار والاستدامة، وتهدف لإحداث أثر تنموي واقتصادي في قلب المملكة.',
   breadcrumbHistory: itemTitle => [PROJECTS.title, itemTitle],
   images: [
     {

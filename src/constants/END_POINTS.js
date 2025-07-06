@@ -19,4 +19,5 @@ export const END_POINTS = {
   MESSAGE: `${API_URL}/message`,
   GOALS: `${API_URL}/goals`,
   AUTH_LOGIN: `${API_URL}/auth/login`,
+  AUTH: `${API_URL}/auth`,  
 };

@@ -9,7 +9,8 @@ import TagFacesRoundedIcon from '@mui/icons-material/TagFacesRounded';
 
 export const ABOUT_BREADCRUMB = {
   title: 'عن تنال',
-  description: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
+  description:
+    'تنال الأولى للاستثمار... شغف بالفرص، التزام بالنجاح، ورؤية تُلهم مستقبل الاستثمار.',
   breadcrumbHistory: ['عن تنال'],
 };
 
@@ -61,21 +62,22 @@ export const BETWEEN_LINES = {
       height: 30,
       src: false,
     },
-  ]
+  ],
 };
-export const  WHY_TANAL = {
+export const WHY_TANAL = {
   title: 'لماذا تنال؟',
-  description: 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
+  description:
+    'لأننا في تنال نعمل بشغف، نخطط بدقة، وننفّذ باحتراف. نمنحك الثقة، الخبرة، والرؤية التي تستحقها لتنطلق باستثماراتك نحو المستقبل',
   icons: {
     client: <PeopleRoundedIcon />,
     employer: <BadgeRoundedIcon />,
     project: <AccountTreeRoundedIcon />,
     happy: <TagFacesRoundedIcon />,
   },
-}
+};
 
 export const GOALS = {
   title: 'أهداف تنال',
   description:
-    'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى',
+    'في تنال، نرسم أهدافنا برؤية واضحة تستند إلى الابتكار، وتعزيز الاقتصاد الوطني، وبناء شراكات مستدامة تُحدث فرقاً حقيقياً في عالم الاستثمار',
 };
