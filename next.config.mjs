@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['tanal-app.onrender.com'],
+    domains: ['res.cloudinary.com'],
   },
   webpackDevMiddleware: config => {
     config.watchOptions = {
